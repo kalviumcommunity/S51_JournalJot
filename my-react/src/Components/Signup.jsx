@@ -8,7 +8,7 @@ function Signup() {
         <div className='div1'>
           <h3 id='name2'>UserName <input type="text" /></h3>
           <h3 id='email2'>Email<input type="text" /></h3>
-          <h3 id='pass2'>Password <input type="text" /></h3>
+          <h3 id='pass2'>Password <input type="text" /><br /><h6>(At least 8 characters long)</h6></h3>
           <button id='signup'>Signup</button>
         </div>
     </div>
