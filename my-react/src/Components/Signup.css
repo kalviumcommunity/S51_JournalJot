@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
 }
-#name2,#email2,#pass2,#signup{
+#name2,#email2,#pass2,#enter1{
     margin-top: 5vh;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -17,7 +17,7 @@
     width: 20vw;
     color: white;
 }
-#signup{
+#enter1{
     background-color: green;
     height: 4vh;
     width: 6vw;
