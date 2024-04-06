@@ -1,0 +1,30 @@
+.background-image{
+    background-image: url("../assets/jj.webp");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw; 
+}
+
+#welcome{
+    position: absolute; 
+    background-color: transparent;
+    top: 50%; 
+    left: 40%; 
+    color: #3d1602; 
+    text-align: center; 
+}
+#signup{
+    background-color: green;
+    height: 4vh;
+    width: 6vw;
+    border-radius: 1vh;
+}
+
+#login{
+    background-color: green;
+    color: white;
+    height: 4vh;
+    width: 6vw;
+    border-radius: 1vh;
+}
