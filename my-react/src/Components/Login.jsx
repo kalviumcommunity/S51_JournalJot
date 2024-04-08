@@ -11,7 +11,10 @@ function Login() {
             <h3 id='email1'>Email </h3><input id='input2' type="text" />
             <h3 id='pass1'>Password </h3><input id='input3' type="text" />
             <div><button id='reset'>Reset Password</button><button id='forgot'>Forgot Password</button></div>
-            <button id='enter2'>Enter</button>
+            <Link to='/main'>
+              <button id='enter2'>Enter</button>
+            </Link>
+            
         </div>
     </div>
   )
