@@ -8,7 +8,6 @@ function Home() {
     <div className="background-image">
         <h1 id='welcome'>Welcome to Journal Jot</h1>
         <Link to='/signup'><button id='signup'>Signup</button></Link>
-        <Link to='/login'> <button id='login'>Login</button></Link>
         
     </div>   
     </>
