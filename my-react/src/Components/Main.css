@@ -8,3 +8,23 @@
 #menu1{
     background-color: rgb(48, 47, 47);
 }
+#bullet{
+    height: 3vh;
+    width: 1.5vw;
+}
+#number{
+    height: 3vh;
+    width: 1.5vw;
+}
+#divider{
+    height: 3vh;
+    width: 1.5vw;
+}
+#attach{
+    height: 4vh;
+    width: 1.5vw;
+}
+#embed{
+    height: 4vh;
+    width: 1.5vw;
+}

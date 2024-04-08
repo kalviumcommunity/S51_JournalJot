@@ -1,6 +1,9 @@
 import React from 'react'
 import menu from "../assets/menu.png"
 import bullet from '../assets/bullet.jpg'
+import number from '../assets/number.png'
+import divider from '../assets/divider.png'
+import embed from '../assets/embed.png'
 import '../Components/Main.css'
 
 function Main() {
@@ -17,11 +20,11 @@ function Main() {
         <div>
             <button id='bold'>B</button>
             <button id='italic'>I</button>
-            <button className="menu1"><img src={bullet} alt="Image" id='bullet'/></button>
-            <button id='number'></button>
-            <button id='divider'></button>
-            <button id='attach-files'></button>
-            <button id='embed-video'></button>
+            <button ><img src={bullet} alt="Image" id='bullet'/></button>
+            <button><img src={number} alt="Image" id='number'/></button>
+            <button><img src={number} alt="Image" id='divider'/></button>
+            <button id='attach'>📎</button>
+            <button><img src={embed} alt="Image" id='embed'/></button>
         </div>
     </div>
     
