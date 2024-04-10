@@ -13,7 +13,7 @@ function Signup() {
           <button id='enter1'>Enter</button>
           <div id='already1'>
             <h4 id='already'>Already have an account?</h4>
-            <Link to='/login'> <button id='login'>Login</button></Link>
+            <Link to='/login'> <button id='login'>Signup</button></Link>
           </div>
         </div>
     </div>

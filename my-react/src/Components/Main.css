@@ -4,6 +4,9 @@
 }
 #publish{
     color: white;
+    height: 6vh;
+    width: 8vw;
+    border-radius: 2vh;
 }
 #menu1{
     background-color: rgb(48, 47, 47);
