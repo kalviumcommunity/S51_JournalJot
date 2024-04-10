@@ -25,6 +25,7 @@ function Main() {
             <button><img src={number} alt="Image" id='divider'/></button>
             <button id='attach'>📎</button>
             <button><img src={embed} alt="Image" id='embed'/></button>
+            <div id='begin'>Begin journey</div>
         </div>
     </div>
     
