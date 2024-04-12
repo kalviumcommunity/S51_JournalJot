@@ -1,4 +1,4 @@
-.login-page {
+/* .login-page {
     display: flex;
     height: 100vh;
   }
@@ -58,4 +58,65 @@
       width: 90%;
     }
   }
-  
+   */
+
+   .login-page {
+    display: flex;
+    height: 100vh; /* No change */
+}
+
+#login-image {
+    flex: 1;
+    background-image: url("../assets/books.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#login-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.input-group {
+    margin-bottom: 2.083vw; /* converted 15px to vw */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 95vw; /* Set width to 95% of the viewport width */
+    border: 0.5208vw solid #ccc; /* converted 1px to vw */
+    border-radius: 1.302vw; /* converted 5px to vw */
+    font-size: 1.042vw; /* converted 16px to vw */
+}
+
+button[type="submit"] {
+    width: 95vw; /* Set width to 95% of the viewport width */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 1.302vw; /* converted 5px to vw */
+    font-size: 1.042vw; /* converted 16px to vw */
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 1.042vw; 
+    text-align: center;
+}
+.login{
+  width: 10vw;
+}
+
+@media (max-width: 768px) {
+    #login-form {
+        width: 90%;
+    }
+}
