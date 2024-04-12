@@ -21,18 +21,19 @@ function Signup() {
   return (
     <>
       <div className='signup-page'>
+      <div id='login-image'></div>
         <div className='signup-form'>
-          <h2>SignUp to Login</h2>
+          <h2 id='get-started'>SignUp to Login</h2>
           <form onSubmit={handleSubmitbtn}>
-            <div className='input-1'>
+            <div className='input'>
               <label htmlFor='email'>EmailId:</label>
               <input type="email" id="email" value={emailId} onChange={handleEmailIdChange} required/>
             </div>
-            <div className='input-2'>
-            <label htmlFor="password">Password:</label>
-              <input type="password" id="password" value={password} onChange={handlePassChange} required />
+            <div className='input'>
+              <label htmlFor="password">Password:</label>
+              <input type="password" id="password" value={pass} onChange={handlePassChange} required />
             </div>
-            <Link to='/login'><button type='submit'>SignUp</button></Link>
+            <Link to='/login'><button className='signup' type='submit'>SignUp</button></Link>
           </form>
         </div>
       </div>

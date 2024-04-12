@@ -23,7 +23,7 @@ function Login() {
       <div className='login-page'>
         <div id='login-image'></div>
         <div id='login-form'>
-          <h2>Login to start your journey</h2>
+          <h2 id='get-started'>Login to start your journey</h2>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label htmlFor="email">Email:</label>
