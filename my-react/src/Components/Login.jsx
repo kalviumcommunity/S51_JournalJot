@@ -33,7 +33,7 @@ function Login() {
               <label htmlFor="password">Password:</label>
               <input type="password" id="password" value={password} onChange={handlePasswordChange} required />
             </div>
-            <button className='login' type="submit">Login</button>
+            <Link to='/main'><button className='login' type="submit">Login</button></Link>
           </form>
           <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
         </div>

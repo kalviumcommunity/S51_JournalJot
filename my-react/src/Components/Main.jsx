@@ -8,7 +8,8 @@ import '../Components/Main.css'
 
 function Main() {
   return (
-    <div>
+    <>
+    <div className='text-box'>
         <div id='main-div'>
             <button id='publish'>Publish</button><br />
             <button id='new-note'>➕</button>
@@ -17,7 +18,7 @@ function Main() {
             </button>
         </div>
         <h1>Title</h1>
-        <div>
+        <div className='icons'>
             <button id='bold'>B</button>
             <button id='italic'>I</button>
             <button ><img src={bullet} alt="Image" id='bullet'/></button>
@@ -25,9 +26,10 @@ function Main() {
             <button><img src={number} alt="Image" id='divider'/></button>
             <button id='attach'>📎</button>
             <button><img src={embed} alt="Image" id='embed'/></button>
-            <div id='begin'>Begin journey</div>
         </div>
     </div>
+    </>
+    
     
   )
 }
