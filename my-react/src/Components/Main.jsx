@@ -8,7 +8,8 @@ import '../Components/Main.css'
 
 function Main() {
   return (
-    <div>
+    <>
+    <div className='text-box'>
         <div id='main-div'>
             <button id='publish'>Publish</button><br />
             <button id='new-note'>➕</button>
@@ -28,6 +29,8 @@ function Main() {
             <div id='begin'>Begin journey</div>
         </div>
     </div>
+    </>
+    
     
   )
 }
