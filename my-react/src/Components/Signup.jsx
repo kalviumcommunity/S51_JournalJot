@@ -1,22 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Components/Signup.css'
 import { Link } from 'react-router-dom';
 
 function Signup() {
+  const [emailId, setEmailId]=useState('');
+  const [pass, setPass]=useState('');
+
+  const handleEmailIdChange = (e) => {
+    setEmailId(e.target.value);
+  };
+
+  const handlePassChange = (e) => {
+    setPass(e.target.value);
+  };
+
+  const handleSubmitbtn = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className='back'>
-        <h1 id='head'>Signup</h1>
-        <div className='signup-div'>
-          <h3 id='name2'>UserName </h3><input id='input1' type="text" />
-          <h3 id='email2'>Email</h3><input id='input2' type="text" />
-          <h3 id='pass2'>Password </h3><input id='input3' type="text" /><br /><h6 id='criteria'>(At least 8 characters long)</h6>
-          <button id='enter1'>Enter</button>
-          <div id='already1'>
-            <h4 id='already'>Already have an account?</h4>
-            <Link to='/login'> <button id='login'>Signup</button></Link>
-          </div>
+    <>
+      <div className='signup-page'>
+        <div className='signup-form'>
+          <h2>SignUp to Login</h2>
+          <form onSubmit={handleSubmitbtn}>
+            <div className='input-1'>
+              <label htmlFor='email'>EmailId:</label>
+              <input type="email" id="email" value={emailId} onChange={handleEmailIdChange} required/>
+            </div>
+            <div className='input-2'>
+            <label htmlFor="password">Password:</label>
+              <input type="password" id="password" value={password} onChange={handlePassChange} required />
+            </div>
+            <Link to='/login'><button type='submit'>SignUp</button></Link>
+          </form>
         </div>
-    </div>
+      </div>
+    </>
   )
 }
 

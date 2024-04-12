@@ -16,7 +16,6 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
   };
 
   return (
@@ -24,7 +23,7 @@ function Login() {
       <div className='login-page'>
         <div id='login-image'></div>
         <div id='login-form'>
-          <h2>Login</h2>
+          <h2>Login to start your journey</h2>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label htmlFor="email">Email:</label>
@@ -34,7 +33,7 @@ function Login() {
               <label htmlFor="password">Password:</label>
               <input type="password" id="password" value={password} onChange={handlePasswordChange} required />
             </div>
-            <button type="submit">Login</button>
+            <button className='login' type="submit">Login</button>
           </form>
           <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
         </div>
