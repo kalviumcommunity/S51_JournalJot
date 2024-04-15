@@ -1,17 +1,9 @@
  .text-box {
   display: flex;
 }
-/* .menu{
-  height: 1vh;
-  width: 2vw;
-} */
-
 .text-box img {
   height: 4vw;
 }
-/* #main-div{
-  display: flex;
-} */
 #bold{
   border: none;
   height: 6vh;
@@ -65,6 +57,7 @@
   color: white;
   border-radius: 2vh;
   background-color:#555;
+  margin-left: 3vw;
 }
 #publish:hover {
   background-color:grey; 
@@ -82,9 +75,26 @@
 }
 
 .icons {
+  position: relative; 
   width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
+
+.calendar-container {
+  position: absolute; 
+  top: 10vh; 
+  left: 70vw; 
+}
+
+.calendar {
+  border: none;
+  font-size: large;
+  border-radius: 1vh;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
