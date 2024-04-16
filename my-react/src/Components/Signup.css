@@ -7,7 +7,7 @@
   }
   #login-image {
     flex: 1;
-    background-image: url("../assets/books.jpg");
+    background-image: url("../assets/aesthetic.jpeg");
     background-size: cover;
     background-position: center;
   }
@@ -26,6 +26,7 @@
   }
   
   input[type="email"],
+  input[type="name"],
   input[type="password"] {
     width: 100%;
     padding: 10px;
