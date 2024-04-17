@@ -3,8 +3,13 @@ import '../Components/Signup.css'
 import { Link } from 'react-router-dom';
 
 function Signup() {
+  const [name, setName]=useState('');
   const [emailId, setEmailId]=useState('');
   const [pass, setPass]=useState('');
+
+  const handleNameChange= (e) => {
+    setName(e.target.value);
+  };
 
   const handleEmailIdChange = (e) => {
     setEmailId(e.target.value);
@@ -25,6 +30,10 @@ function Signup() {
         <div className='signup-form'>
           <h2 id='get-started'>SignUp to Login</h2>
           <form onSubmit={handleSubmitbtn}>
+          <div className='input'>
+            <label htmlFor="name">Name:</label>
+              <input type="name" id='name' value={name} onChange={handleNameChange} required/>
+            </div>
             <div className='input'>
               <label htmlFor='email'>EmailId:</label>
               <input type="email" id="email" value={emailId} onChange={handleEmailIdChange} required/>
