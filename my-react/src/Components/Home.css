@@ -102,9 +102,29 @@
   }
 
   #get{
-    height: 4vh;
-    width: 8vw;
-    border: 2px solid pink;
+    height: 8vh;
+    width: 10vw;
+    border: 1vh solid rgb(243, 164, 177);
+    position: relative;
+    top: -100px;
     background-color: skyblue;
     border-radius: 1vh;
+    opacity: 0;
+    animation: myAnim 1s ease 1s 1 normal forwards;
   }
+
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+::-webkit-scrollbar{
+  width: 0px;
+}
