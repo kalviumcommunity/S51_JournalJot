@@ -87,6 +87,7 @@
 
 .calendar {
   float: right;
+  margin-left: 2vw;
   border: none;
   font-size: x-large;
   border-radius: 1vh;
@@ -108,6 +109,11 @@
   width: 100vw;
   border: 1vh solid black;
   text-align:start;
+  display: flex;
+}
+textarea{
+  height: 99vh;
+  width: 50vw;
 }
 
 .main-page{
