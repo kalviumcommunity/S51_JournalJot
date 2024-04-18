@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Components/Login.css';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -14,9 +14,28 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const navigate = useNavigate();
+  function getCookie(name) {
+      let cookieArray = document.cookie.split('; ');
+      let cookie = cookieArray.find((row) => row.startsWith(name + '='));
+      return cookie ? cookie.split('=')[1] : null;
+  }
+  function setCookie(name, value, daysToExpire) {
+      let date = new Date();
+      date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
+      document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+  }
+      const handleSubmit=(e)=>{
+          e.preventDefault();
+          axios.post('http://localhost:3000/login',{
+              email:email,
+              password:password
+          }).then((response)=>{
+          setCookie('token', response.data.accessToken,365);
+          setCookie('email', email,365);
+      navigate('/main')}).catch((error)=>{console.error(error)});
+
+      }
 
   return (
     <>
@@ -33,7 +52,7 @@ function Login() {
               <label htmlFor="password">Password:</label>
               <input type="password" id="password" value={password} onChange={handlePasswordChange} required />
             </div>
-            <Link to='/main'><button className='login' type="submit">Login</button></Link>
+            <button className='login' type="submit">Login</button>
           </form>
           <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
         </div>

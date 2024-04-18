@@ -12,6 +12,8 @@ function Main() {
   const [value, onChange] = useState(new Date()); 
   const [showCalendar, setShowCalendar] = useState(false);
   const [tooltip, setTooltip] = useState('');
+  const [journalContent, setJournalContent] = useState('');
+
 
   const toggleCalendar = () => {
     setShowCalendar(!showCalendar);
@@ -72,7 +74,12 @@ function Main() {
       {tooltip && <div className="tooltip">{tooltip}</div>}
     </div> 
     <div className='text-box'>
-      <p>Write Here...</p>
+    <textarea 
+          value={journalContent} 
+          onChange={(e) => setJournalContent(e.target.value)} 
+          placeholder="Write Here..."
+          className="journal-textarea"
+        />
       {showCalendar ? (
             <button className='calendar' onMouseEnter={() => handleHover('Close')}
             onMouseLeave={handleLeave} onClick={toggleCalendar}>❌</button>

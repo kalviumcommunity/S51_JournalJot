@@ -68,7 +68,7 @@ function Home() {
       </div>
       {/* <p> Your private sanctuary for soulful journaling, syncing seamlessly with music, and curating content from across platforms!</p> */}
       <div  className="button-container">
-        <Link to='/signup'><button id='get'>Get Started!</button></Link>
+        <Link to='/login'><button id='get'>Get Started!</button></Link>
       </div>
     </div>
     </>
