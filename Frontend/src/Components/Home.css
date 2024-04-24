@@ -1,0 +1,130 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Catamaran&family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+.welcome{
+    background-image: url('../assets/jj.webp');
+    background-position: center;
+    background-color: skyblue;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(36, 15, 8);
+    font-family: "Kanit", sans-serif;
+}
+
+.welcome p{
+    font-size: large;
+    width: 50%;
+    text-align: center;
+    font-weight: 600;
+    background:transparent;
+}
+
+.welcome h1{
+    font-size: 4rem;
+    background:transparent;
+}
+.head{
+    color: rgb(77, 46, 35);
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    font-family: "ABeeZee", sans-serif;
+    background-color: rgb(77, 46, 35);
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.about h4{
+    width: 70%;
+}
+
+#get{
+    margin-top: 25px;
+    background:transparent;
+    background-color: rgb(77, 46, 35);
+    padding: 10px 15px;
+    border-radius: 2vh;
+    border: none;
+    color: white;
+    font-weight: 600;
+    width: 300px;
+    font-size: larger;
+} */
+
+
+.home-background {
+    background-color: rgb(3, 68, 94); 
+  }
+.patterns {
+    height: 100vh;
+    position: relative;
+  }
+
+  svg text {
+    font-family: Lora;
+    letter-spacing: 10px;
+    stroke: #ffa5d8;
+    font-size: 150px;
+    font-weight: 700;
+    stroke-width: 3;
+   
+    animation: textAnimate 5s infinite alternate;
+    
+  }
+  
+  @keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset:  20%;
+      fill:hsl(189, 68%, 75%)
+  
+    }
+    
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffstet: -20%;
+      fill: hsla(189, 68%, 75%,0%)
+    }
+    
+  }
+  .button-container {
+    left: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #get{
+    height: 8vh;
+    width: 10vw;
+    border: 1vh solid rgb(243, 164, 177);
+    position: relative;
+    top: -100px;
+    background-color: skyblue;
+    border-radius: 1vh;
+    opacity: 0;
+    animation: myAnim 1s ease 1s 1 normal forwards;
+  }
+
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+::-webkit-scrollbar{
+  width: 0px;
+}
