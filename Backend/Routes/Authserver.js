@@ -3,8 +3,9 @@ require('dotenv').config
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const signup =express.Router();
-const userModel = require('../models/Users.model')
+const userModel = require('../Models/User.model')
 const login = express.Router();
+
 signup.post('/signup',async (req, res) => {
     try{
         const hashedPassword = await bcrypt.hash(req.body.password,10)
