@@ -28,3 +28,13 @@ nav{
     width: 5vw;
     border: 0.1vh solid black;
 }
+
+.close{
+    height: 3vh;
+    width: 2vw;
+}
+#dashboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
