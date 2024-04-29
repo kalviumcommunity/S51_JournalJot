@@ -1,0 +1,30 @@
+nav{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 2vw;
+    align-items: center;
+    box-shadow: 0 10px 15px -3px rgba(70, 70, 70, 0.541)
+}
+
+.menu{
+    /* height: 2vh; */
+    width: 3vw;
+}
+
+.profile{
+    height: 6vh;                
+    width: 3vw;
+    border: 0.1vh solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drawer{
+    height: 50vh;
+    width: 5vw;
+    border: 0.1vh solid black;
+}
