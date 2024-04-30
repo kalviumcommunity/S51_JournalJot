@@ -1,0 +1,27 @@
+.content{
+    height: 85vh;
+    width: 80vw;
+    border: 0.2vh solid black;
+    margin-top: 5vh;
+    border-radius: 2vh;
+}
+.calendar{
+    height: 5vh;
+    width: 17vw;
+    /* border: 0.2vh solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calen{
+    border: 1px solid #000;
+}
+
+.title{
+    height: 5vh;
+    width: 17vw;
+    border: 0.2vh solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
