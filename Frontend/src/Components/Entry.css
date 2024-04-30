@@ -1,16 +1,15 @@
 .content{
-    height: 85vh;
-    width: 80vw;
+    height: 82.5vh;
+    width: 100vw;
     border: 0.2vh solid black;
     margin-top: 5vh;
     border-radius: 2vh;
 }
 .calendar{
     height: 5vh;
-    width: 17vw;
-    /* border: 0.2vh solid black; */
+    width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .calen{
@@ -24,4 +23,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.save{
+    height: 5vh;
+    width: 5vw;
+    border: 0.5vh solid darkgreen;
+    background-color: green;
+    border-radius: 1vh;
 }
