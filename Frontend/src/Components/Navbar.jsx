@@ -5,12 +5,28 @@ import menu from "../assets/menu (1).png"
 import close from "../assets/close.png"
 import {Link} from 'react-router-dom'
 
+// import * as React from 'react';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+
+
 function Navbar() {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to track whether drawer is open or closed
 
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [placement, setPlacement] = React.useState('right')
+
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // const openModal = () => {
+  //   setIsModalOpen(true);
+  // }
+
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  // }
 
 
   return (
@@ -29,9 +45,14 @@ function Navbar() {
           <p>All Entries</p>
           <Link to='/entry'><p>New Entry</p></Link>
           <p>Calendar</p>  
+          {/* Render the MUI date picker calendar */}
+          {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DateCalendar />
+            </LocalizationProvider> */}
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+      
 
 
     
