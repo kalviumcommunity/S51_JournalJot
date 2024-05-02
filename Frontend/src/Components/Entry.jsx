@@ -8,6 +8,8 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 function Entry() {
   const [date, setDate] = useState(null);
   const [editorState, setEditorState] = useState(null);
+  const [titleValue, setTitleValue]=useState('')
+  // const [contentValue, setContentValue]= useState('')
 
   useEffect(() => {
     const loadEditor = async () => {
@@ -21,6 +23,14 @@ function Entry() {
     setEditorState(editorState);
   };
 
+  const handleTitleChange = (event)=>{
+    setTitleValue(event.target.value);
+  }
+
+  // const handleContentChange = (event)=>{
+  //   setContentValue(event.target.value);
+  // }
+
   return (
     <>
       <Navbar />
@@ -30,10 +40,9 @@ function Entry() {
             Date:
             <Calendar className="calen" value={date} onChange={(e) => setDate(e.value)} dateFormat="dd/mm/yy" />
           </div>
-          
+          <textarea className="title" value={titleValue} onChange={handleTitleChange} placeholder='Enter Title'></textarea>
           <button className='save'>Save</button>
         </div>
-        
         <Editor
           editorState={editorState}
           toolbarClassName="toolbarClassName"
@@ -41,7 +50,7 @@ function Entry() {
           editorClassName="editorClassName"
           onEditorStateChange={onEditorStateChange} // Pass the function to handle editor state changes
         />
-        <div className="title">Enter Title...</div>
+        {/* <textarea className='text-area' value={contentValue} onChange={handleContentChange} placeholder='Start your journey !!'></textarea> */}
       </div>
     </>
   );

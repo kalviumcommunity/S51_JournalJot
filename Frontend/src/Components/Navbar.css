@@ -5,18 +5,25 @@ nav{
     justify-content: space-between;
     padding: 0px 2vw;
     align-items: center;
+    background-color: rgb(3, 68, 94);
+    color: white;
     box-shadow: 0 10px 15px -3px rgba(70, 70, 70, 0.541)
 }
 
 .menu{
-    /* height: 2vh; */
-    width: 3vw;
+    width: 2.5vw;
+    background-color: none;
+}
+.head{
+    font-size: 2vw;
+    font-family:cursive;
 }
 
 .profile{
     height: 6vh;                
     width: 3vw;
-    border: 0.1vh solid black;
+    border: 0.1vh solid white;
+    background-color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;

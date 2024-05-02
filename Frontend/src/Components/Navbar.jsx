@@ -1,63 +1,41 @@
-import React,{useState} from 'react'
-import "./Navbar.css"
-import { useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, RadioGroup, Stack, Radio, Button } from '@chakra-ui/react'; // Import necessary Chakra UI components
-import menu from "../assets/menu (1).png"
-import close from "../assets/close.png"
-import {Link} from 'react-router-dom'
-
-// import * as React from 'react';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-// import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-
+import React, { useState } from 'react';
+import "./Navbar.css";
+import { useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
+import menu from "../assets/ham.png";
+import close from "../assets/close.png";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to track whether drawer is open or closed
-
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [placement, setPlacement] = React.useState('right')
-
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // const openModal = () => {
-  //   setIsModalOpen(true);
-  // }
-
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  // }
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [placement, setPlacement] = React.useState('right');
 
 
   return (
     <>
-    <nav>
+      <nav>
         <div className='profile'>👤</div>
-        <h1>Journal Jot</h1>
-        <img className='menu' onClick={onOpen}src={menu} alt="" />
-    </nav>
+        <h1 className='head'>Journal Jot</h1>
+        <img className='menu' src={menu} alt="" onClick={onOpen} />
+      </nav>
 
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerHeader borderBottomWidth='1px'><p id='dashboard'>Dashboard <img className='close' onClick={onClose} src={close} alt="" /></p></DrawerHeader>
           <DrawerBody>
-          <p>All Entries</p>
-          <Link to='/entry'><p>New Entry</p></Link>
-          <p>Calendar</p>  
-          {/* Render the MUI date picker calendar */}
-          {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DateCalendar />
-            </LocalizationProvider> */}
+            <Link to='/main'><p>Home</p></Link>
+            <Link to='/entry'><p>New Entry</p></Link>
+            <p onClick={() => openModal('privacy')}>Privacy Policy</p>
+            <p onClick={() => openModal('about')}>About Us</p>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+
       
-
-
-    
     </>
   )
 }
 
-export default Navbar
+export default Navbar;
