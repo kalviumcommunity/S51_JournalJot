@@ -1,9 +1,8 @@
 .content{
-    height: 82.5vh;
+    height: 87vh;
     width: 100vw;
     border: 0.2vh solid black;
-    margin-top: 5vh;
-    border-radius: 2vh;
+    /* border-radius: 2vh; */
 }
 .calendar{
     height: 5vh;
@@ -12,23 +11,34 @@
     justify-content: space-between;
     align-items: center;
 }
-.calen{
-    border: 1px solid #000;
+.calen .p-inputtext{
+    /* border: 1px solid #000; */
+    background-color: transparent !important;
 }
 
-.title{
-    height: 5vh;
+.title {
+    height: 4vh;
     width: 17vw;
-    border: 0.2vh solid black;
+    border: none;
+    
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-right: 10vw;
+    background-color: transparent !important;
+
 }
 
 .save{
     height: 5vh;
     width: 5vw;
     border: 0.5vh solid darkgreen;
-    background-color: green;
+    color: white;
+    background-color: rgb(2, 146, 2);
     border-radius: 1vh;
 }
+
+/* .text-area{
+    height: 55vh;
+} */
