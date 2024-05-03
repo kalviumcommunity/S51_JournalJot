@@ -1,3 +1,7 @@
 .about{
     font-family:cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

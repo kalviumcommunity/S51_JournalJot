@@ -4,17 +4,27 @@ import { useDisclosure, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, Draw
 import menu from "../assets/ham.png";
 import close from "../assets/close.png";
 import { Link } from 'react-router-dom';
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react';
 
 function Navbar() {  
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState('right');
+  const [isProfileModal , setProfileModal]=useState(false);
+
+  const handleProfileClick = () => {
+    setProfileModal(true);
+  }
+
+  const handleCloseProfileModal = () => {
+    setProfileModal(false);
+  }
 
   return (
     <>
       <nav> 
-        <div className='profile'>👤</div>
+        <div className='profile' onClick={handleProfileClick}>👤</div>
         <h1 className='head'>Journal Jot</h1>
         <img className='menu' src={menu} alt="" onClick={onOpen} />
       </nav>
@@ -31,6 +41,26 @@ function Navbar() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+
+      <Modal isOpen={isProfileModal} onClose={handleCloseProfileModal}>
+        <ModalOverlay />
+        <ModalContent className='profile1' style={{ width: '12vw' }}>
+          <ModalHeader>Profile</ModalHeader>
+          <ModalCloseButton className='close'/>
+          <ModalBody>
+            <Button colorScheme="blue" mr={3} onClick={handleCloseProfileModal}>
+              Edit Profile
+            </Button>
+            <Button className='logout-button' colorScheme="red" mr={3} onClick={handleCloseProfileModal}>
+              Log Out
+            </Button>
+          </ModalBody>
+          {/* <ModalFooter> 
+            <Button onClick={handleCloseProfileModal}>Cancel</Button>
+          </ModalFooter> */}
+        </ModalContent>
+      </Modal>
+
       
     </>
   )
