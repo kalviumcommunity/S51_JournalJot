@@ -54,7 +54,7 @@ function Login() {
         </svg>
         <input placeholder="Password" className="input-field" type="password" />
       </div>
-      <Link to='/main'>
+      <Link to='/home'>
       <button className='login'>Login</button>
       </Link>
       <button className="button3">Forgot Password?</button>

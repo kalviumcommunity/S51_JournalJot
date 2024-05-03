@@ -48,9 +48,11 @@ function Navbar() {
           <ModalHeader>Profile</ModalHeader>
           <ModalCloseButton className='close'/>
           <ModalBody>
-            <Button colorScheme="blue" mr={3} onClick={handleCloseProfileModal}>
-              Edit Profile
-            </Button>
+            <Link to='/editprofile'>
+              <Button colorScheme="blue" mr={3} onClick={handleCloseProfileModal}>
+                Edit Profile
+              </Button>
+            </Link>
             <Button className='logout-button' colorScheme="red" mr={3} onClick={handleCloseProfileModal}>
               Log Out
             </Button>
