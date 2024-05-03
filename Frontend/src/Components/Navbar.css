@@ -45,3 +45,22 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
+
+.profile1{
+    height: 35vh;
+    margin-right: 88vw;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    text-align: center;
+
+}
+
+.logout-button {
+    margin-top: 4vh;
+    width: 8vw;
+}
+
+.close{
+    margin-top: 1vh;
+}
