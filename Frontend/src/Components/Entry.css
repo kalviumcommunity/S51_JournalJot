@@ -11,10 +11,14 @@
     justify-content: space-between;
     align-items: center;
 }
-.calen .p-inputtext{
-    /* border: 1px solid #000; */
-    background-color: transparent !important;
+
+.p-datepicker-group{
+    background-color: white;
+    border: 1px solid black;
+    width: 22vw;
+    padding: 5px;
 }
+
 
 .title {
     height: 4vh;
