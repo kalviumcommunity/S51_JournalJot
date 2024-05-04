@@ -5,15 +5,15 @@ function EditProfile() {
     return (
         <>
             <div className="edit-profile-container">
-                <h1 className='edit'>Edit Profile</h1>
+                <div className='profile-edit'><p>👤</p></div>
                 <div className='edit-profile'>
-                    <div className='profile-edit'><p>👤</p></div>
+                    
                     <div className='edit-inputs'>
                         <div className='label-input'>
-                            <input type="text" placeholder='Name...' />
+                            <input type="text" placeholder='New Name...' />
                         </div>
                         <div className='label-input'>
-                            <input type="text" placeholder='Nick Name...' />
+                            <input type="text" placeholder='New Nick Name...' />
                         </div>
                         <div className='label-input'>
                             <input type="text" placeholder='New Password...' />
@@ -22,7 +22,7 @@ function EditProfile() {
                             <input type="text" placeholder='New Description...' />
                         </div>
                         <div className='label-input'>
-                            <input type="text" placeholder='Hobbies...' />
+                            <input type="text" placeholder='New Hobbies...' />
                         </div>
                         <button className='Save-edit'>Save</button>
                     </div>
