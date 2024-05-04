@@ -67,12 +67,10 @@ function Signup() {
       </svg>
       <input autoComplete="off" placeholder="Password" className="input-field" type="password" />
     </div>
-    <Link to='/login'>
-    <button className='signup'>Signup</button>
-    </Link>
-    <button className="button3">Forgot Password?</button>
+    <Link to="/Profile"><button className='signup' >Signup</button></Link>
+    {/* <button className="button3">Forgot Password?</button> */}
 
-    <p className='account2'>Already have an account? <Link to="/login">Login</Link></p>
+    <p className='account2'>Already have an account? <Link to="/Login">Login</Link></p>
   </form>
 </div>
 

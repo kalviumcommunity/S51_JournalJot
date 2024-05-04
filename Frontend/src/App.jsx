@@ -7,7 +7,8 @@ import Home from './Components/Home.jsx';
 import Main from './Components/Main.jsx';
 import Entry from './Components/Entry.jsx';
 import Privacy from './Components/Privacy.jsx'
-import About from './Components/About.jsx'
+import About from './Components/About.jsx';
+import Profile from './Components/Profile.jsx';
 import EditProfile from './Components/EditProfile.jsx';
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/entry' element={<Entry/>}/>
         <Route path='/privacy' element={<Privacy/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/profile' element={<Profile/>}/>
         <Route path='/editprofile' element={<EditProfile/>}/>
       </Routes>
          
