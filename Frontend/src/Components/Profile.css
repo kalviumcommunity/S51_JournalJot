@@ -1,59 +1,70 @@
-.edit-profile-container{
+.profile-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.edit{
+.profile-page{
+    background-color: black;
+    height:100vh ;
+}
+/* .edit{
     font-size: 35px;
     font-weight: bolder;
-}
+} */
 
-.edit-profile{
+.profile-input{
     display: flex;
     width: 70vw;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
+    text-align: center;
+    margin-top: 15vh;
 }
 
-.edit-inputs{
-    border: 1px solid black;
+.inputs{
+    border: 1px solid white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     height: 60vh;
-    width: 20vw;
+    width: 40vw;
     align-items: center;
     justify-content: space-around;
     padding: 10px;
 }
 
-.label-input input{
+.input input{
     border: 1px solid black;
     border-radius: 2px;
     padding: 2px ;
 }
 
-.Save-edit{
+.Save{
     border: 1px solid green;
     background-color: rgb(134, 206, 134);
     padding: 2px 20px;
+    border-radius: 5px;
 }
 
-.profile-edit{
+.profile-picture{
     font-size: 100px;
-    border: 1px solid black;
+    border: 2px solid white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 130px;
     width: 130px;
-    margin-right: 40px;
+    margin-top: 2vh;
 }
 
-.profile-edit p{
+.profile-picture p{
     margin: 0 0 10px 7px;
+}
+
+.brief{
+    height: 10vh;
+    width: 15vw;
 }
