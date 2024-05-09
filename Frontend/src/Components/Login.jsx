@@ -57,9 +57,9 @@ function Login() {
         </svg>
         <input placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}} className="input-field" type="password" />
       </div>
-      {/* <Link to='/home'> */}
+      <Link to='/home'>
       <button type='submit' className='login'>Login</button>
-      {/* </Link> */}
+      </Link>
       <button className="button3">Forgot Password?</button>
 
       <p className='account1'>Don't have an account? <Link to="/signup">Sign up</Link></p>

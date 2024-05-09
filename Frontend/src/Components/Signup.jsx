@@ -68,7 +68,9 @@ function Signup() {
       </svg>
       <input autoComplete="off" placeholder="Password"  onChange={(e)=>{setPass(e.target.value)}} className="input-field" type="password" />
     </div>
+    <Link to='/profile'>
     <button type='submit' className='signup' >Signup</button>
+    </Link>
     {/* <button className="button3">Forgot Password?</button> */}
 
     <p className='account2'>Already have an account? <Link to="/Login">Login</Link></p>
