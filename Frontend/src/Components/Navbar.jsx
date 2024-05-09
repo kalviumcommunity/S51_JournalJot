@@ -57,6 +57,9 @@ function Navbar() {
               Log Out
             </Button>
           </ModalBody>
+          {/* <ModalFooter> 
+            <Button onClick={handleCloseProfileModal}>Cancel</Button>
+          </ModalFooter> */}
         </ModalContent>
       </Modal>
 
