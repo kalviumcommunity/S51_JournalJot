@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors');
 const {login,signup} = require('./Routes/Authserver')
 const { startDatabase, isConnected } = require('./Config/Connection');
+const {getRouter, postRouter, deleteRouter, putRouter} = require('./Routes/Profile.route')
 const app = express()
 app.use(bodyParser.json());
 app.use(cors())
@@ -19,7 +20,7 @@ app.get('/home', (req, res) => {
   })
   })
 app.get('/ping',(req,res)=>{
-    res.send({message:'pong!, Welcome to the amazing world of cricket'})
+    res.send({message:'pong!, Welcome to the amazing world of Journaling'})
 })
 
 startDatabase()

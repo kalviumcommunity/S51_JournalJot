@@ -2,16 +2,17 @@ const express = require('express')
 require('dotenv').config()  
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const signup =express.Router();
+const signup =express.Router();      
 const userModel = require('../Models/User.model')
-const login = express.Router();
+const login = express.Router();    
 
 signup.post('/signup',async (req, res) => {
     try{
         const hashedPassword = await bcrypt.hash(req.body.password,10)
         const newUser = {
             name: req.body.name,
-            password: hashedPassword,
+            email:req.body.email,
+            password: hashedPassword
         }
          await userModel.create(newUser);
          const accessToken = jwt.sign(hashedPassword,process.env.ACCESS_TOKEN_SECRET )
@@ -21,7 +22,7 @@ signup.post('/signup',async (req, res) => {
     }
 });
 login.post('/login',async (req, res) => {
-    const user = await userModel.findOne({name:req.body.name});
+    const user = await userModel.findOne({email:req.body.email});
    if(user==null){
     return res.status(400).send('Cannot find user');
    }
