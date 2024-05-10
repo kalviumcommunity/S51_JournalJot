@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 import './Profile.css'
-import { Link ,useNavigate} from 'react-router-dom';
+import { Link ,Navigate,useNavigate} from 'react-router-dom';
 
 function Profile() {
 
     const [profileName,setProfileName]= useState('');
     const [nickname, setNickName]= useState('');
-    const [profilePassword, setProfilePassword]=useState('');
     const [hobbies, setHobbies]=useState('');
     const [description, setdescription]=useState('');
     
@@ -26,14 +25,24 @@ function Profile() {
     const handleNickNameChange = (e) =>{
         setNickName(e.target.value);
     }
-    const handleProfilePasswordChange = (e) =>{
-        setProfilePassword(e.target.value);
-    }
     const handleHobbiesChange = (e) =>{
         setHobbies(e.target.value);
     }
     const handleDescriptionChange = (e) =>{
         setdescription(e.target.value);``
+    }
+
+    const submit = (e)=>{
+        e.preventDefault();
+        axios.post('',{
+            ProfileName:profileName,
+            Nickname:nickname,
+            Hobbies:hobbies,
+            Description:description
+        },{headers:{authorization:`Beaare ${token}`}}).then((response)=>{
+            console.log(response.data);
+            Navigate('/')
+        }).catch((error) => console.error(error))
     }
 
   return (
@@ -43,6 +52,7 @@ function Profile() {
     <div className='profile-input'>
         
         <div className='inputs'>
+            <form onSubmit={submit}>
             <div className='input'>
                 <input type="text" onClick={handleProfileNameChange} placeholder='Name...' />
             </div>
@@ -50,18 +60,16 @@ function Profile() {
                 <input type="text" onClick={handleNickNameChange} placeholder='Nick Name...' />
             </div>
             <div className='input'>
-                <input type="text"onClick={handleProfilePasswordChange} placeholder='Password...' />
-            </div>
-            <div className='input'>
                 <input type="text" onClick={handleHobbiesChange} placeholder='Hobbies...' />
             </div>
             <div className='input'>
                 <input className='brief' onClick={handleDescriptionChange} type="text" placeholder='Brief description on yourself...' />
             </div>
-            <Link to='/login'>
+            {/* <Link to='/login'> */}
             <button className='Save'>Save</button>
-            </Link>
-            </div>
+            {/* </Link> */}
+            </form>
+        </div>
         </div>
     </div>
 </div>
