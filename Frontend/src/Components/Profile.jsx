@@ -30,7 +30,7 @@ function Profile() {
         setHobbies(e.target.value);
     }
     const handleDescriptionChange = (e) => {
-        setdescription(e.target.value); ``
+        setdescription(e.target.value); 
     }
 
     const submit = (e) => {
