@@ -19,10 +19,10 @@ function EditProfile() {
                             <input type="text" placeholder='New Password...' />
                         </div>
                         <div className='label-input'>
-                            <input type="text" placeholder='New Description...' />
+                            <input type="text" placeholder='New Hobbies...' />
                         </div>
                         <div className='label-input'>
-                            <input type="text" placeholder='New Hobbies...' />
+                            <input type="text" placeholder='New Description...' />
                         </div>
                         <button className='Save-edit'>Save</button>
                     </div>

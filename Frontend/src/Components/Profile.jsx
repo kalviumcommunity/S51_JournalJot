@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './Profile.css'
 import axios from 'axios'
-import { Link ,useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Profile() {
 
-    const [profileName,setProfileName]= useState('');
-    const [nickname, setNickName]= useState('');
-    const [hobbies, setHobbies]=useState('');
-    const [description, setdescription]=useState('');
+    const [profileName, setProfileName] = useState('');
+    const [nickname, setNickName] = useState('');
+    const [hobbies, setHobbies] = useState('');
+    const [description, setdescription] = useState('');
     const navigate = useNavigate()
     function getCookie(name) {
         let cookieArray = document.cookie.split('; ');
@@ -23,66 +23,84 @@ function Profile() {
     const handleProfileNameChange = (e) => {
         setProfileName(e.target.value);
     }
-    const handleNickNameChange = (e) =>{
+    const handleNickNameChange = (e) => {
         setNickName(e.target.value);
     }
-    const handleHobbiesChange = (e) =>{
+    const handleHobbiesChange = (e) => {
         setHobbies(e.target.value);
     }
-    const handleDescriptionChange = (e) =>{
-        setdescription(e.target.value);``
+    const handleDescriptionChange = (e) => {
+        setdescription(e.target.value); ``
     }
 
-    const submit = (e)=>{
+    const submit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/api/addprofile',{
-            Profilename:profileName,
-            Nickname:nickname,
-            Hobbies:hobbies,
-            Description:description
-        },{headers:{authorization:`Beaare ${getCookie('token')}`}}).then((response)=>{
+        axios.post('http://localhost:3000/api/addprofile', {
+            Profilename: profileName,
+            Nickname: nickname,
+            Hobbies: hobbies,
+            Description: description
+        }, { headers: { authorization: `Beaare ${getCookie('token')}` } }).then((response) => {
             console.log(response.data);
-            setCookie("ProfileName",profileName,365);
+            setCookie("ProfileName", profileName, 365);
             setCookie("Nickname", nickname, 365);
             setCookie("Hobbies", hobbies, 365);
             setCookie("Description", description, 365)
-            setCookie("ID",response.data._id)
+            setCookie("ID", response.data._id)
             navigate('/')
         }).catch((error) => console.error(error))
     }
 
-  return (
-    <div className='profile-page'>
-    <div className="profile-container">
-    <div className='profile-picture'><p>👤</p></div>
-    <div className='profile-input'>
-        
-        <div className='inputs'>
-            <form onSubmit={submit}>
-            <div className='input'>
-                <input type="text" onChange={handleProfileNameChange} placeholder='Name...' />
-            </div>
-            <div className='input'>
-                <input type="text" onChange={handleNickNameChange} placeholder='Nick Name...' />
-            </div>
-            <div className='input'>
-                <input type="text" onChange={handleHobbiesChange} placeholder='Hobbies...' />
-            </div>
-            <div className='input'>
-                <input className='brief' onChange={handleDescriptionChange} type="text" placeholder='Brief description on yourself...' />
-            </div>
-            <Link to='/login'>
-            <button type='submit' className='Save'>Save</button>
-            </Link>
-            </form>
-        </div>
+    return (
+        <>
+            <div className="Profile-page">
+                <div className="profile-image">👤</div>
+                <div className="profile-card1">
+                    <div className="profile-card2">
+                        <form className="profile5" onSubmit={submit}>
+                            <div className="profile-field">
+                                <input onChange={handleProfileNameChange} placeholder="Name" className="inp-field" type="text" />
+                            </div>
 
-        
+                            <div className="profile-field">
+                                <input
+                                    onChange={handleNickNameChange}
+                                    placeholder="Nick Name"
+                                    className="inp-field"
+                                    type="email"
+                                />
+                            </div>
 
-        </div>
-    </div>
-</div>
-  )
+                            <div className="profile-field">
+                                <input
+                                    onChange={handleHobbiesChange}
+                                    placeholder="Hobbies"
+                                    className="inp-field"
+                                    type="text"
+                                />
+                            </div>
+
+                            <div className="profile-field">
+                                <textarea
+                                    onChange={handleDescriptionChange}
+                                    placeholder="Description"
+                                    cols="30"
+                                    rows="3"
+                                    className="inp-field"
+                                ></textarea>
+                            </div>
+                            <div>
+                                <Link to='/login'>
+                                    <button type='submit' className='profile-save'>Save</button>
+                                </Link>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </>
+    )
 }
 
 export default Profile
