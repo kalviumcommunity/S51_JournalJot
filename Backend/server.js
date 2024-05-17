@@ -10,6 +10,11 @@ app.use(cors())
 app.use(express.json())
 app.use('/',login)
 app.use('/',signup)
+app.use(getRouter)
+app.use(postRouter)
+app.use(deleteRouter)
+app.use(putRouter)
+
 
 app.get('/', (req, res) => {
   res.send({message:'Welcome to the amazing world of Journal'})

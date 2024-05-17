@@ -57,7 +57,12 @@ function EditProfile() {
     return (
         <>
             <div className="edit-profile-container">
-                <div className='profile-edit'><p>👤</p></div>
+                <div>
+                    <div className='profile-edit'><p>👤</p></div>
+                    <h1 className='name'>{profileNameEdit}</h1>
+                    <p className='des'>{descriptionEdit}</p>
+                </div>
+                
 
                 <div className="edit-profile">
                     <div className="edit-inputs">
@@ -79,7 +84,7 @@ function EditProfile() {
                         </div>
                         <div>
                             {/* <Link to='/home'> */}
-                            <button className='Save-edit'>Save Changes</button>
+                            <button className='Save-edit'>Edit profile</button>
                             {/* </Link> */}
                         </div>
                         </form>
