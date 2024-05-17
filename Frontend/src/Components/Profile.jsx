@@ -90,9 +90,9 @@ function Profile() {
                                 ></textarea>
                             </div>
                             <div>
-                                <Link to='/login'>
+                                {/* <Link to='/login'> */}
                                     <button type='submit' className='profile-save'>Save</button>
-                                </Link>
+                                {/* </Link> */}
                             </div>
                         </form>
                     </div>
