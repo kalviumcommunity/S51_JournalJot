@@ -15,17 +15,17 @@ const schema=Joi.object({
     Description:Joi.string().required()
 })
 
-const authenticationToken = (req, res, next) =>{
+const authenticateToken = (req, res, next) => {
     const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.spit(' ')[1]
-        if(token==null) return res.sendStatus(401)
-            jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user)=>{
-                    if(err) return res.sendStatus(403)
-                    next()
-                })
-}
+    const token = authHeader && authHeader.split(' ')[1]
+    if(token==null) return res.sendStatus(401)
+    jwt.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,user)=>{
+      if(err) return res.sendStatus(403)
+      next()
+    })
+  }
 
-getRouter.get('/api/getallprofile',authenticationToken,async (req, res) => {
+getRouter.get('/api/getallprofile',authenticateToken,async (req, res) => {
     try{
         const profile = await profileModel.find();
         res.status(200).json(profile);
@@ -37,9 +37,9 @@ getRouter.get('/api/getallprofile',authenticationToken,async (req, res) => {
     }
 })
 
-getRouter.get('/api/getprofile/:id',authenticationToken,async (req, res) => {
+getRouter.get('/api/getprofile/:id',authenticateToken,async (req, res) => {
     try{
-        const profile = await profileModel.findone({Id:req.params.id});
+        const profile = await profileModel.findone({_id:req.params.id});
         res.status(200).json(profile);
     } catch(err){
         console.log(err);
@@ -49,7 +49,7 @@ getRouter.get('/api/getprofile/:id',authenticationToken,async (req, res) => {
     }
 })
 
-postRouter.post('/api/addprofile',authenticationToken,async (req, res) => {
+postRouter.post('/api/addprofile',async (req, res) => {
 
           
             const { error, value } = schema.validate(req.body, { abortEarly: false });
@@ -76,15 +76,14 @@ postRouter.post('/api/addprofile',authenticationToken,async (req, res) => {
         
 })
 
-putRouter.patch('/api/updateprofile/:id',authenticationToken,async (req, res) => {
+putRouter.patch('/api/updateprofile/:id',authenticateToken,async (req, res) => {
     const { error, value } = schema.validate(req.body, { abortEarly: false });
           
     try {
         if (!error) {
         const {id} = req.params;
-        const filter ={"Id":Number(id)}
         let{Profilename,Nickname,Hobbies,Description} = req.body;
-        const profile = await profileModel.findOneAndUpdate(filter,{Profilename,Nickname,Hobbies,Description});
+        const profile = await profileModel.findOneAndUpdate({_id:id},{Profilename,Nickname,Hobbies,Description});
         res.status(200).json(profile);}
         else {
             return res.status(400).send({
@@ -101,7 +100,7 @@ putRouter.patch('/api/updateprofile/:id',authenticationToken,async (req, res) =>
 
 })
 
-deleteRouter.delete('/api/deleteprofile/:id',authenticationToken,async (req, res) => {
+deleteRouter.delete('/api/deleteprofile/:id',authenticateToken,async (req, res) => {
     try {
         const {id} = req.params;
         const filter ={"Id":Number(id)}

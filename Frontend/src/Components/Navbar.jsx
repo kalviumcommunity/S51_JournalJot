@@ -45,11 +45,11 @@ function Navbar() {
       <Modal isOpen={isProfileModal} onClose={handleCloseProfileModal}>
         <ModalOverlay />
         <ModalContent className='profile1' style={{ width: '12vw' }}>
-          <ModalHeader>Profile</ModalHeader>
+          {/* <ModalHeader>Profile</ModalHeader> */}
           <ModalCloseButton className='close'/>
           <ModalBody>
             <Link to='/editprofile'>
-              <Button colorScheme="blue" mr={3} onClick={handleCloseProfileModal}>
+              <Button className='editprofile-button' colorScheme="blue" mr={3} onClick={handleCloseProfileModal}>
                 Edit Profile
               </Button>
             </Link>
