@@ -40,7 +40,7 @@ function Signup() {
           }).then((response)=>{
           setCookie('token', response.data.accessToken,365);
           setCookie('email', emailId,365);
-      navigate('/home')}).catch((error)=>{console.error(error)});
+      navigate('/profile')}).catch((error)=>{console.error(error)});
 
       }
 
@@ -68,9 +68,7 @@ function Signup() {
       </svg>
       <input autoComplete="off" placeholder="Password"  onChange={(e)=>{setPass(e.target.value)}} className="input-field" type="password" />
     </div>
-    <Link to='/profile'>
     <button type='submit' className='signup' >Signup</button>
-    </Link>
     {/* <button className="button3">Forgot Password?</button> */}
 
     <p className='account2'>Already have an account? <Link to="/Login">Login</Link></p>
