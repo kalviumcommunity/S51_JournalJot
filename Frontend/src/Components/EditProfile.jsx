@@ -68,7 +68,7 @@ function EditProfile() {
                     <p className='des'>{descriptionEdit}</p>
                 </div>
                 
-
+       
                 <div className="edit-profile">
                     <div className="edit-inputs">
                         <form className="edit-form" >
