@@ -1,11 +1,12 @@
 import React from 'react'
 import './Home.css';
+import icon from '../assets/app-icon.png'
 import { Link } from 'react-router-dom';
 
 function Home() {
   return (
     <>
-      <div className="home-background">
+      {/* <div className="home-background">
             <div className="patterns">
               <svg width="100%" height="100%">
                 <defs>
@@ -30,11 +31,23 @@ function Home() {
                   Journal Jot
                 </text>
               </svg>
-            </div>
-            <div  className="button-container">
+            </div> */}
+            <nav className='Navbar'>
+              <div className='left-nav'>
+                <img src={icon} alt="logo" />
+                <h1>Journal Jot</h1>
+              </div>
+              <div className="right-nav">
+                <h2>Home</h2>
+                <h2>About Us</h2>
+                <h2>Login</h2>
+                <button>Sign Up</button>
+              </div>
+            </nav>
+            {/* <div  className="button-container">
               <Link to='/login'><button id='get'>Get Started!</button></Link>
-            </div>
-      </div>
+            </div> */}
+      {/* </div> */}
     </>
   )
 }

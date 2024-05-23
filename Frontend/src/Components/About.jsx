@@ -6,7 +6,7 @@ function About() {
   return (
     <>
     <Navbar/>
-    <p className='about'>About Journal Jot: Crafting Tomorrow's Memories Today Welcome to Journal Jot, where we believe that every thought, every moment, and every memory deserves to be cherished. Founded with a passion for preserving life's fleeting moments in a secure and meaningful manner, Journal Jot is more than just a digital journaling platform—it's a testament to the power of self-expression and introspection.
+    <p className='about'>About Journal Jot: Crafting Tomorrow's Memories . Today Welcome to Journal Jot, where we believe that every thought, every moment, and every memory deserves to be cherished. Founded with a passion for preserving life's fleeting moments in a secure and meaningful manner, Journal Jot is more than just a digital journaling platform—it's a testament to the power of self-expression and introspection.
               
               Our Mission
               

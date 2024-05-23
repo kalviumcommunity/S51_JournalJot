@@ -23,7 +23,7 @@ function Navbar() {
 
   return (
     <>
-      <nav> 
+      <nav id='navbar'> 
         <div className='profile' onClick={handleProfileClick}>👤</div>
         <h1 className='head'>Journal Jot</h1>
         <img className='menu' src={menu} alt="" onClick={onOpen} />

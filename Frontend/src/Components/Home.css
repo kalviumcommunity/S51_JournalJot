@@ -1,68 +1,35 @@
-.home-background {
-    background-color: rgb(3, 68, 94); 
-  }
-.patterns {
-    height: 100vh;
-    position: relative;
-  }
+.button-container {
+  left: 50%;
+  display: flex;
+  justify-content: center;
+}
 
-  svg text {
-    font-family: Lora;
-    letter-spacing: 10px;
-    stroke: #ffa5d8;
-    font-size: 150px;
-    font-weight: 700;
-    stroke-width: 3;
-   
-    animation: textAnimate 5s infinite alternate;
-    
-  }
-  
-  @keyframes textAnimate {
-    0% {
-      stroke-dasharray: 0 50%;
-      stroke-dashoffset:  20%;
-      fill:hsl(189, 68%, 75%)
-  
-    }
-    
-    100% {
-      stroke-dasharray: 50% 0;
-      stroke-dashoffstet: -20%;
-      fill: hsla(189, 68%, 75%,0%)
-    }
-    
-  }
-  .button-container {
-    left: 50%;
-    display: flex;
-    justify-content: center;
-  }
+.Navbar{
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+  justify-content: space-between;
+  margin: 20px;
+}
 
-  #get{
-    height: 8vh;
-    width: 10vw;
-    border: 1vh solid rgb(243, 164, 177);
-    position: relative;
-    top: -100px;
-    background-color: skyblue;
-    border-radius: 1vh;
-    opacity: 0;
-    animation: myAnim 1s ease 1s 1 normal forwards;
-  }
+.left-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  @keyframes myAnim {
-    0% {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+.right-nav{
+  display: flex;
+  align-items: center;
+}
 
-::-webkit-scrollbar{
-  width: 0px;
+.right-nav h2{
+  margin-right: 50px;
+}
+
+.right-nav button{
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 15px;
+  background-color: orange;
 }
