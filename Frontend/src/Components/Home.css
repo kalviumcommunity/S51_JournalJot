@@ -9,7 +9,7 @@
   align-items: center;
   /* border: 1px solid black; */
   justify-content: space-between;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 .left-nav{
@@ -32,4 +32,116 @@
   padding: 0 20px;
   border-radius: 15px;
   background-color: orange;
+}
+
+.landing-background{
+  background-color: antiquewhite;
+}
+
+.join{
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  background-color: orange;
+  margin-top: 4vh;
+}
+
+.first-land{
+  display: flex;
+  justify-content: space-around;
+}
+
+.girl{
+  height: 88vh;
+}
+
+.land{
+  margin-top: 20vh;
+}
+
+.h1{
+  font-size: 7vh;
+}
+.h5{
+  margin-top: 4vh;
+}
+
+.span1{
+  color: orange;
+}
+.span2{
+  color: darkblue;
+}
+
+.span3{
+  color: darkblue;
+}
+.span4{
+  color: orange;
+}
+.span5{
+  color: darkblue;
+  font-size: 4vh;
+}
+.span6{
+  color: orange;
+  font-size: 4vh;
+}
+.span7{
+  color: darkblue;
+  font-size: 4vh;
+}
+.span8{
+  color: orange;
+  font-size: 4vh;
+}
+.span9{
+  color: darkblue;
+}
+.span10{
+  color: orange;
+}
+.all{
+  font-size: 4vh;
+  margin-top: 4vh;
+}
+.all2{
+  margin-top: 4vh;
+}
+.land2{
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.second-land{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.third-land{
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.everything{
+  display: flex;
+  margin-top: 20vh;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.class{
+  height: 50vh;
+}
+.features{
+  display: block;
+  margin-top: 20vh;
+  justify-content: space-around;
+  text-align: center;
 }
