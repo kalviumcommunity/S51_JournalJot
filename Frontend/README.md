@@ -14,3 +14,5 @@ Customizable Themes: Personalize your journal with a variety of themes and backg
 Mood Tracker: Reflect on your emotional state and track your mood over time.
 Interactive Map: Plot your adventures on an interactive map and visualize your journey geographically.
 Daily Prompts: Get inspired with daily writing prompts to kickstart your journaling session.
+
+Netlify Link - https://6650890c9f9ce2088beb40b4--inquisitive-bienenstitch-2fca2b.netlify.app/
