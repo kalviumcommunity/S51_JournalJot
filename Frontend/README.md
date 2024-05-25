@@ -16,3 +16,5 @@ Interactive Map: Plot your adventures on an interactive map and visualize your j
 Daily Prompts: Get inspired with daily writing prompts to kickstart your journaling session.
 
 Netlify Link - https://6650890c9f9ce2088beb40b4--inquisitive-bienenstitch-2fca2b.netlify.app/
+
+Render Link - https://s51-journaljot.onrender.com
