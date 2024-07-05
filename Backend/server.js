@@ -4,7 +4,9 @@ const cors = require('cors');
 const {login,signup} = require('./Routes/Authserver')
 const { startDatabase, isConnected } = require('./Config/Connection');
 const {getRouter, postRouter, deleteRouter, putRouter} = require('./Routes/Profile.route')
+const {JournalRouter}=require('./Routes/Journal.routes')
 const app = express()
+app.use(express.json())
 app.use(bodyParser.json());
 app.use(cors())
 app.use(express.json())
@@ -14,6 +16,7 @@ app.use(getRouter)
 app.use(postRouter)
 app.use(deleteRouter)
 app.use(putRouter)
+app.use(JournalRouter)
 
 
 app.get('/', (req, res) => {
