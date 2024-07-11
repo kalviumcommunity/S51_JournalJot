@@ -38,6 +38,7 @@ function Navbar() {
             <Link to='/entry'><p>New Entry</p></Link>
             <Link to='/privacy'><p>Privacy Policy</p></Link>
             <Link to='/about'><p>About Us</p></Link>
+            <Link to='/'><p>Landing page</p></Link>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

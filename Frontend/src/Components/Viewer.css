@@ -1,0 +1,38 @@
+.viewer{
+    border: 1px solid;
+    height: 100vh;
+    width: 100vw;
+}
+.viewer-head{
+    display: flex;
+
+}
+.viewer-title{
+    margin-left: 45vw;
+}
+.viewer-update{
+    margin-left: 80vw;
+    border: 1px solid green;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    height: 8vh;
+    width: 8vw;
+    margin-top: 82vh;
+}
+.viewer-delete{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    height: 8vh;
+    width: 8vw;
+    margin-top: 82vh;
+}
+.button-container {
+    /* position: fixed; */
+    bottom: 1vh;
+    right: 1vw;
+    display: flex;
+    gap: 1vw;
+}

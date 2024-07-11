@@ -1,0 +1,49 @@
+.content{
+    height: 85vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.calendar{
+    height: 5vh;
+    width: 98.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* .Calen{
+    border: 1px solid black;
+} */
+.p-datepicker-group{
+    background-color: white;
+    border: 1px solid black;
+    width: 22vw;
+    padding: 5px;
+}
+.quill{
+    height: 80vh;
+}
+
+.title {
+    height: 4vh;
+    width: 25vw;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 10vw;
+    background-color: transparent !important;
+
+}
+
+.save{
+    height: 5vh;
+    width: 5vw;
+    border: 0.5vh solid darkgreen;
+    color: white;
+    background-color: rgb(2, 146, 2);
+    border-radius: 1vh;
+}
+.nav-entry {
+    width: 100vw !important; 
+  }

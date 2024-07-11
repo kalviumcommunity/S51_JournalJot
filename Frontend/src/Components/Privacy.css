@@ -1,3 +1,20 @@
 .privacy{
-    font-family:cursive;
+    font-family: cursive;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 18vh;
+    width: 60vw;
+    margin-left: 5vw;
+}
+
+.policy{
+    display: flex;
+}
+
+.pen{
+    height: 70vh;
+    margin-top: 10vh;
+    border-radius: 2vh;
+    width: 35vw;
 }

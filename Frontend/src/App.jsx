@@ -10,12 +10,15 @@ import Privacy from './Components/Privacy.jsx'
 import About from './Components/About.jsx';
 import Profile from './Components/Profile.jsx';
 import EditProfile from './Components/EditProfile.jsx';
+import Viewer from './Components/Viewer.jsx';
+import Update from './Components/Update.jsx';
 
 
 function App() {
 
   return (
     <>
+    
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -27,6 +30,8 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/editprofile' element={<EditProfile/>}/>
+        <Route path='/viewer/:id' element={<Viewer/>}/>
+        <Route path='/update/:id' element={<Update/>}/>
       </Routes>
          
     </Router>

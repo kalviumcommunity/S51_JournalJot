@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './EditProfile.css'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
@@ -22,6 +22,23 @@ function EditProfile() {
         date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
         document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
     }
+    const [data,setData] = useState()
+
+  const fetcher = async () =>{
+    console.log("hey")
+    try {
+      const res = await axios.get(`http://localhost:3000/api/getprofile/${getCookie("email")}`,{headers:{authorization:`Bearer ${getCookie("token")}`}})
+      console.log(res , " jes")
+      setData(res.data)
+    }catch (err){
+      console.log(err)
+    }
+  }
+
+  useEffect(()=>{
+    console.log("ll ")
+    fetcher()
+  },[])
 
     const handleProfileNameEditChange = (e) => {
         setProfileNameEdit(e.target.value);
@@ -42,7 +59,7 @@ function EditProfile() {
 
     const submit = (e) => {
         e.preventDefault();
-        axios.patch(`http://localhost:3000/api/updateprofile/${getCookie("ID")}`, {
+        axios.put(`http://localhost:3000/api/updateprofile/${getCookie("email")}`, {
             Profilename: profileNameEdit,
             Nickname: nicknameEdit,
             Hobbies: hobbiesEdit,
@@ -54,7 +71,7 @@ function EditProfile() {
             setCookie("NicknameEdit", nicknameEdit, 365);
             setCookie("HobbiesEdit", hobbiesEdit, 365);
             setCookie("DescriptionEdit", descriptionEdit, 365)
-            setCookie("ID", response.data._id)
+            // setCookie("ID", response.data._id)
             navigate('/Home')
         }).catch((error) => console.error(error))
     }
@@ -73,19 +90,19 @@ function EditProfile() {
                     <div className="edit-inputs">
                         <form className="edit-form" >
                         <div className='label-input'>
-                            <input className='input-edit' defaultValue={getCookie("ProfileName")} onChange={handleProfileNameEditChange} type="text" placeholder='New Name...' disabled={disabled} />
+                            <input className='input-edit' defaultValue={getCookie("ProfilenameEdit")} onChange={handleProfileNameEditChange} type="text" placeholder='New Name...' disabled={disabled} />
                         </div>
 
                         <div className='label-input'>
-                            <input className='input-edit' defaultValue={getCookie("Nickname")} onChange={handleNickNameEditChange} type="text" placeholder='New Nick Name...' disabled={disabled} />
+                            <input className='input-edit' defaultValue={getCookie("NicknameEdit")} onChange={handleNickNameEditChange} type="text" placeholder='New Nick Name...' disabled={disabled} />
                         </div>
 
                         <div className='label-input'>
-                            <input className='input-edit' defaultValue={getCookie("Hobbies")} onChange={handleHobbiesEditChange} type="text" placeholder='New Hobbies...' disabled={disabled}/>
+                            <input className='input-edit' defaultValue={getCookie("HobbiesEdit")} onChange={handleHobbiesEditChange} type="text" placeholder='New Hobbies...' disabled={disabled}/>
                         </div>
 
                         <div className='label-input'>
-                            <textarea defaultValue={getCookie("Description")} onChange={handleDescriptionEditChange} type="text" placeholder='New Description...' className='input-edit' disabled={disabled}></textarea>
+                            <textarea defaultValue={getCookie("DescriptionEdit")} onChange={handleDescriptionEditChange} type="text" placeholder='New Description...' className='input-edit' disabled={disabled}></textarea>
                         </div>
                         <div>{(disabled)?
                             <button onClick={handleDisabledEditChange} className='Save-edit'>Edit profile</button>
