@@ -1,17 +1,24 @@
 .content{
-    height: 87vh;
     width: 100vw;
-    border: 0.2vh solid black;
-    /* border-radius: 2vh; */
-}
-.calendar{
-    height: 5vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 9vh;
 }
 
+.calendar{
+    display: flex;
+    justify-content: space-between;
+    height: 5vh;
+    width: 100vw;
+    align-items: center;
+    overflow-x: hidden;
+}
+/* 
+.Calen{
+
+} */
+
+.text-entry{
+    margin-bottom: 4vh;
+}
 .p-datepicker-group{
     background-color: white;
     border: 1px solid black;
@@ -19,12 +26,14 @@
     padding: 5px;
 }
 
+.quill{
+    height: 80vh;
+}
 
 .title {
     height: 4vh;
-    width: 17vw;
+    width: 25vw;
     border: none;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,6 +52,16 @@
     border-radius: 1vh;
 }
 
-/* .text-area{
-    height: 55vh;
-} */
+.nav-entry {
+    width: 100vw !important;
+}
+
+  .alert {
+    color: red;
+    background-color: rgb(231, 231, 5);
+    font-size: 15px;
+    width: 14vw;
+    text-align: center;
+  }
+  
+

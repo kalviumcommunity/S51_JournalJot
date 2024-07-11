@@ -97,10 +97,45 @@
 }
 .span9{
   color: darkblue;
+  font-size: 4vh;
 }
 .span10{
   color: orange;
+  font-size: 4vh;
 }
+.span11{
+  color: orange;
+  font-size: 4vh;
+
+}
+.span12{
+  color: darkblue;
+  font-size: 4vh;
+}
+.span13{
+  color: darkblue;
+  font-size: 4vh;
+}
+.span14{
+  color: orange;
+  font-size: 4vh;
+}
+.span15{
+  color: darkblue;
+  font-size: 4vh;
+}
+.span16{
+  color: orange;
+  font-size: 4vh;
+}
+.icon4{
+  height: 70vh;
+  width: 30vw;
+}
+.icon5{
+  height: 70vh;
+}
+
 .all{
   font-size: 4vh;
   margin-top: 4vh;
@@ -117,7 +152,7 @@
 
 .second-land{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   margin-top: 20vh;
 }
@@ -131,17 +166,195 @@
 
 .everything{
   display: flex;
-  margin-top: 20vh;
+  margin-top: 10vh;
   justify-content: space-around;
   text-align: center;
+  align-items: center;
 }
 
 .class{
   height: 50vh;
 }
+
 .features{
   display: block;
   margin-top: 20vh;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
+}
+.feature{
+  margin-top: 3vh;
+}
+.tools{
+  display: flex;
+  margin-top: 20vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fun{
+  display: flex;
+  margin-top: 20vh;
+  justify-content: space-around;
+  align-items: center;
+}
+.para1{
+  margin-bottom: 5vh;
+}
+
+.para2{
+  margin-top: 5vh;
+
+}
+
+.see{
+  border: 2px solid orange;
+  height: 8vh;
+  width: 15vw;
+  border-radius: 2vw;
+  text-align: center;
+  margin-left: 40vw;
+  margin-top: 15vh;
+}
+
+.four{
+  display: flex;
+  /* margin: 15vw; */
+}
+
+.four2{
+  margin-top: 4vw;
+  margin-left: 2vw;
+}
+
+.integration{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top:20vh;
+  align-items: center;
+}
+.all-integration{
+  border: 2px solid orange;
+  height: 8vh;
+  width: 15vw;
+  border-radius: 2vw;
+  margin-top: 5vh;
+}
+.line{
+  border:  0.1px solid black;
+  width: 5vw;
+  height: 0px;
+}
+
+.line-flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.inte{
+  margin-bottom: 1px;
+}
+.platform{
+  margin-top: 5vh;
+}
+.platform1{
+  margin-top: 5vh;
+}
+
+.footer{
+  margin-top: 30vh;
+  border: 1px solid rgb(1, 1, 53);
+  background-color: rgb(1, 1, 53);
+  height: 48vh;
+  text-align: center;
+  color: white;
+}
+.line1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4vh;
+}
+.line-foot{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2vw;
+}
+.center-line{
+  border:  0.1px solid rgba(255, 255, 255, 0.562);
+  width: 0px;
+  height: 5vw;
+  margin-left: 2vw;
+}
+.foot-logo{
+  height: 8vh;
+}
+.line2{
+  margin-top: 5vh;
+  color: rgba(255, 255, 255, 0.486);
+}
+.line3{
+  display: flex;
+  column-gap: 5vh;
+  margin-top: 5vh;
+  margin-left: 44vw;
+}
+.line4{
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-left: 1vw;
+  color: rgba(255, 255, 255, 0.562);
+}
+.line5{
+  color: rgba(255, 255, 255, 0.562);
+  margin-top: 5vh;
+}
+.terms{
+  margin-left: 2vw;
+}
+
+.middle-line{
+  border:  0.1px solid rgba(255, 255, 255, 0.562);
+  width: 0px;
+  height: 2vw;
+  margin-left: 2vw;
+}
+
+.foot-input{
+  height: 7vh;
+  width: 20vw;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.486);
+  border-radius: 2vw;
+  background-color: rgb(1, 1, 53);
+}
+.subscribe{
+  border: 1px solid white;
+  border-radius: 2vw;
+  background-color: blue;
+  height: 7vh;
+  width: 8vw;
+}
+
+.linkedin{
+  font-size: 6vh;
+  border-radius: 4vw;
+}
+.github{
+  font-size: 6vh;
+  border-radius: 100% 100%;
+}
+.insta{
+  font-size: 6vh;
 }

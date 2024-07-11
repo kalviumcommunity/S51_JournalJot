@@ -1,53 +1,41 @@
-import React from 'react'
+import React , {useEffect, useState} from 'react'
 import './Home.css';
 import icon from '../assets/app-icon.png'
 import header from '../assets/header-pic.png'
 import icon1 from '../assets/icon1.png'
 import icon2 from '../assets/icon2.png'
 import icon3 from '../assets/icon3.png'
+import icon4 from '../assets/icon4.png'
+import icon5 from '../assets/icon5.png'
+import icon6 from '../assets/icon6.png'
+import icon7 from '../assets/icon7.png'
+import icon8 from '../assets/icon8.png'
+import icon9 from '../assets/icon9.png' 
+import { FaGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaInstagramSquare } from "react-icons/fa";
+// import insta from '../assets/insta (3).png'
+// import linkedin from '../assets/linked-in (3).png'
+// import github from '../assets/github (2).png'
+import axios from "axios"
 import everything from '../assets/everything.png'
 import { Link } from 'react-router-dom';
 
 function Home() {
+
   return (
     <>
-      {/* <div className="home-background">
-            <div className="patterns">
-              <svg width="100%" height="100%">
-                <defs>
-                  <pattern
-                    id="polka-dots"
-                    x="0"
-                    y="0"
-                    width="100"
-                    height="100"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <circle fill="#be9ddf" cx="25" cy="25" r="3"></circle>
-                  </pattern>
-                </defs>
-                <style>
-                  @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i");
-                </style>
-
-                <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)"></rect>
-
-                <text x="50%" y="60%" textAnchor="middle">
-                  Journal Jot
-                </text>
-              </svg>
-            </div> */}
             <div className='landing-background'>
               <nav className='Navbar'>
                 <div className='left-nav'>
                   <img src={icon} alt="logo" />
-                  <h1>Journal Jot</h1>
+                  <b><h1>Journal Jot</h1></b>
                 </div>
                 <div className="right-nav">
-                  <h2>Home</h2>
-                  <h2>About Us</h2>
-                  <h2>Login</h2>
-                  <button>Sign Up</button>
+                  <Link to="/home"><h2>Home</h2></Link>
+                  {/* <h2>About Us</h2> */}
+                  <Link to="/login"><h2>Login</h2></Link>
+                  <Link to="/signup"><button>Sign Up</button></Link>
                 </div>
               </nav>
 
@@ -59,7 +47,7 @@ function Home() {
                   <div>
                     <h5 className='h5'>Journal jot is an interesting platform that will help <br /> you to maintain your journal with more privacy. </h5>
                   </div>
-                  <button className='join'>Join for free</button>
+                  <Link to="/signup"><button className='join'>Join for free</button></Link>
                 </div>
 
                 <div>
@@ -74,21 +62,21 @@ function Home() {
             </div>
 
             <div className='second-land'>
-              <div>
-                <img src={icon1} alt="icon1" />
-                <p>Online Journaling</p>
+              <div className='icon'>
+                <img src={icon1} alt="icon" />
+                <b><p>Online Journaling</p></b>
                 <p>Simple and secure way to store <br /> and record your journal’s <br /> everyday.</p>
               </div>
 
-              <div>
+              <div className='icon'>
                 <img src={icon2} alt="icon2" />
-                <p>Easy management and Tracking </p>
+                <b><p>Easy management and Tracking </p></b>
                 <p>Easy managing your journal’s and <br /> keeping track of journey’s.</p>
               </div>
 
-              <div>
+              <div className='icon'>
                 <img src={icon3} alt="icon3" />
-                <p>Easy sharing your journal’s </p>
+                <b><p>Easy sharing your journal’s </p></b>
                 <p>Easily sharing your journal’s <br /> with your friends and family <br /> using build in sharing system</p>
               </div>
             </div>
@@ -108,15 +96,104 @@ function Home() {
             </div>
 
             <div className='features'>
-              <b><p><span className='span9'>Our</span><span className='span10'>Features</span> </p></b>
-              <p>This very extraordinary feature, can make journal activities more efficient</p>
+              <p><b><span className='span9'>Our</span> <span className='span10'>Features</span> </b></p>
+              <p className='feature'>This very extraordinary feature, can make journal activities more efficient</p>
             </div>
 
+            <div className='tools'>
+              <div>
+                <p><b><span className='span11'>Tools</span> <span className='span12'>For Journaling <br /> Enthusiast</span></b></p>
+                <p className='para2'>We are committed to providing a safe, intuitive, <br /> and feature-rich platform that enables users to <br /> capture, reflect upon, and share their stories with <br /> confidence.</p>
+              </div>
+              <div>
+                <img className='icon4' src={icon4} alt="" />
+              </div>
+            </div>
 
-            {/* <div  className="button-container">
-              <Link to='/login'><button id='get'>Get Started!</button></Link>
-            </div> */}
-      {/* </div> */}
+            <div className='fun'>
+              <div className='fun1'>
+                <p className='para1'><b><span className='span13'>Making Journaling</span> <span className='span14'>Fun</span></b></p>
+                <p>We understand the significance of personal narratives <br /> in shaping our understanding of the world and <br /> ourselves.</p>
+              </div>
+              <div>
+                <img className='icon5' src={icon5} alt="" />
+              </div>
+            </div>
+
+            <div>
+              <button className='see'>See more features</button>
+            </div>
+
+            <div className='integration'>
+              <div className='four'>
+                <div>
+                  <div>
+                    <img src={icon6} alt="icon6" />
+                  </div>
+                  <div>
+                  <img src={icon8} alt="icon8" />
+                    
+                  </div>
+                </div>
+                <div className='four2'>
+                  <div>
+                  <img src={icon7} alt="icon7" />
+                  </div>
+                  <div>
+                    <img src={icon9} alt="icon9" />
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div>
+                <div className='line-flex'>
+                  <div className='line'></div>
+                  <p className='inte'>INTEGRATIONS</p>
+                </div>
+                <div className='platform'>
+                    <p><b><span className='span15'>50+ journaling tools and <br /> platform</span> <span className='span16'>integrations</span></b></p>
+                </div>
+                <div className='platform1'>
+                  <p>Journal Jot has every tool your journal needs and comes pre- <br />integrated with more than 50+ tools, journal information <br /> systems (JIS), and journal platforms.</p>
+                </div>
+                <div>
+                <button className='all-integration'>See all integrations</button>
+                </div>
+              </div>
+              
+            </div>
+
+            <div className='footer'>
+              <div className='line1'>
+                <div className='line-foot'>
+                  <img className='foot-logo' src={icon} alt="logo" />
+                  <p><b>Journal Jot</b></p>
+                  <div className='center-line'></div>
+                </div>
+
+                <div>
+                  <p>Online<br /> Journaling App</p>
+                </div>
+              </div>
+              
+              <div className='line3'>
+                <a className='linkedin'  href="https://www.linkedin.com/in/d-premapriya-998789289"> <FaGithub /></a>
+                <a className='github'  href="https://github.com/Premapriya1905"><FaLinkedin /></a>
+                <a className='insta'  href="https://www.instagram.com/reels/CzT7kxwRNBg/"><FaInstagramSquare /></a>
+              </div>
+
+              <div className='line4'>
+                <Link to='/privacy'><p>Privacy Policy</p></Link>
+                <div className='middle-line'></div>
+                <Link to='/about' ><p className='terms'>About Us</p></Link>
+              </div>
+
+              <div className='line5'>
+                <p>Contact - premapriya1905@gamil.com</p>
+              </div>
+            </div>
+
     </>
   )
 }

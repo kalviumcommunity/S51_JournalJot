@@ -33,13 +33,15 @@ function Profile() {
         setdescription(e.target.value); 
     }
 
+    // const navigate = useNavigate();
     const submit = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3000/api/addprofile', {
             Profilename: profileName,
             Nickname: nickname,
             Hobbies: hobbies,
-            Description: description
+            Description: description,
+            email : getCookie("email")
         }, { headers: { authorization: `Beaare ${getCookie('token')}` } }).then((response) => {
             console.log(response.data);
             setCookie("ProfileName", profileName, 365);
@@ -47,14 +49,19 @@ function Profile() {
             setCookie("Hobbies", hobbies, 365);
             setCookie("Description", description, 365)
             setCookie("ID", response.data._id)
-            navigate('/')
+            navigate('/home')
         }).catch((error) => console.error(error))
     }
 
     return (
         <>
             <div className="Profile-page">
-                <div className="profile-image">👤</div>
+                <div className="hero">
+                    <div className='card'>
+                        <img className='profile-pic' src="images/profile.png"/>
+                        <input className='' type="file" accept='image/jpeg' placeholder='👤' />
+                    </div>
+                </div>
                 <div className="profile-card1">
                     <div className="profile-card2">
                         <form className="profile5" onSubmit={submit}>
@@ -67,7 +74,7 @@ function Profile() {
                                     onChange={handleNickNameChange}
                                     placeholder="Nick Name"
                                     className="inp-field"
-                                    type="email"
+                                    type="text"
                                 />
                             </div>
 

@@ -9,6 +9,23 @@
 
 .profile-image {
   margin-bottom: 20px;
+  width: 50%;
+  height: 50%;
+  background: #d1d1d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-profile{
+  width: 10vw;
+  height: 20vh;
+  background: grey;
+  padding: 40px;
+  border-radius: 50%;
+}
+.choose{
+  width: 20vw;
 }
 
 .profile-card1 {
