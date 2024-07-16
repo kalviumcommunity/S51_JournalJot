@@ -33,9 +33,10 @@ function Login() {
       const handleSubmit=(e)=>{
           e.preventDefault();
           axios.post('http://localhost:3000/login',{
-              email:email,
+              email:email, 
               password:password
           }).then((response)=>{
+            console.log(response.data.accessToken)
           setCookie('token', response.data.accessToken,365);
           setCookie('email', email,365);
       navigate('/home')}).catch((error)=>{console.error(error)});

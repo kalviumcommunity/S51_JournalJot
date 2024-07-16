@@ -17,7 +17,12 @@
     top: 90vh;
     left: 94.3vw;
     color: white;
-    background-color: rgb(2, 2, 85);
+    background-color: #002B5B;
+}
+
+.logging{
+  margin-top: 10vh;
+  color: grey;
 }
 
 .symbol{

@@ -190,7 +190,8 @@ function Home() {
               </div>
 
               <div className='line5'>
-                <p>Contact - premapriya1905@gamil.com</p>
+                <p>Email - premapriya1905@gmail.com</p>
+                <p>Contact - 949-735-4092</p>
               </div>
             </div>
 
