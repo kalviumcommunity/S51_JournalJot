@@ -6,7 +6,7 @@ import symbol from "../assets/in.png"
 import { Link } from 'react-router-dom'
 
 function Main() {
-  const [data,setData] = useState()
+  const [data, setData] = useState([]);
   function getCookie(name) {
     let cookieArray = document.cookie.split('; ');
     let cookie = cookieArray.find((row) => row.startsWith(name + '='));
@@ -39,8 +39,11 @@ function Main() {
     fetcher()
   },[])
   return (
-    <>
+    <> 
     <Navbar/>
+    {
+      data.length<1?(
+    <p className='logging'>Start logging your entries...</p>):
     <div className='main-content'>
       {data &&
         data.map((item,index)=>{
@@ -52,8 +55,8 @@ function Main() {
           )
         })
       }
-      
-    </div>
+    
+    </div>}
     <Link to="/entry"><p className='plus'> + </p></Link>
     </>
   )
