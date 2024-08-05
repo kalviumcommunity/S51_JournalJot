@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useParams, Link } from 'react-router-dom';
 import { MdDelete } from "react-icons/md";
 import { MdEditDocument } from "react-icons/md";
+import { FaRegImage } from "react-icons/fa6";
 import Navbar from './Navbar';
 import axios from 'axios';
 import Modal from 'react-modal';
@@ -58,7 +59,7 @@ function Viewer() {
 
     const addOneDay = (dateString) => {
         const date = new Date(dateString);
-        date.setDate(date.getDate() + 1);
+        date.setDate(date.getDate() );
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');
@@ -77,17 +78,18 @@ function Viewer() {
                 <div className='viewer-head'>
                     <div>{`Date: ${data && addOneDay(data.date.split("T")[0])}`}</div>
                     <p className='viewer-title'>{`${data && data.title}`}</p>
-                    <div className='viewer-image'>
-                    <button onClick={() => setModalIsOpen(true)} style={{ cursor: 'pointer' }} >Image</button>
-                </div>
+                    <div className='button-container'>
+                        <Link to={`/update/${id}`}>
+                            <button className='viewer-update' title='Edit' onClick={handleUpdate}><MdEditDocument /></button>
+                        </Link>
+                        <button className='viewer-delete' title='Delete' onClick={handleDelete}><MdDelete /></button>
+                    </div>
                 </div>
                 
                 <div className='viewer-content' dangerouslySetInnerHTML={{ __html: data && data.content }}></div>
-                <div className='button-container'>
-                    <Link to={`/update/${id}`}>
-                        <button className='viewer-update' onClick={handleUpdate}><MdEditDocument /></button>
-                    </Link>
-                    <button className='viewer-delete' onClick={handleDelete}><MdDelete /></button>
+                
+                <div className='viewer-image'>
+                        <button title='Image' onClick={() => setModalIsOpen(true)} style={{ cursor: 'pointer' }} ><FaRegImage /></button>
                 </div>
             </div>
             <Modal

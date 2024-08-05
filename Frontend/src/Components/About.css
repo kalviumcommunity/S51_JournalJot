@@ -19,4 +19,6 @@
 }
 .us-about{
     display: flex;
+    background-color: antiquewhite;
+    height: 100vh;
 }

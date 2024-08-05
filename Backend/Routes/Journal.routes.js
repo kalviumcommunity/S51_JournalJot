@@ -12,6 +12,7 @@ const schema=Joi.object({
     content:Joi.string().required(),
     date:Joi.date().required(),
     email:Joi.string(),
+    imageUrl:Joi.string().required()
 })
 
 const authenticateToken = (req, res, next) => {
@@ -24,42 +25,6 @@ const authenticateToken = (req, res, next) => {
     })
 }
 
-//   const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, 'uploads/');
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, Date.now() + path.extname(file.originalname)); // Append extension
-//     }
-//   });
-  
-//   const upload = multer({ storage: storage });
-
-  JournalRouter.post('/api/addjournal', upload.single('image'), async (req, res) => {
-    const { error, value } = schema.validate(req.body, { abortEarly: false });
-  
-    try {
-      if (!error) {
-        const { title, content, date, email } = req.body;
-        let imageUrl = '';
-        if (req.file) {
-          imageUrl = req.file.path;
-        }
-        const journal = await JournalModel.create({ title, content, date, email, imageUrl });
-        res.status(201).json(journal);
-      } else {
-        return res.status(400).send({
-          message: `Bad request, error:${error}`
-        });
-      }
-    } catch (err) {
-      console.log(err);
-      return res.status(500).send({
-        message: "Internal server error"
-      });
-    }
-  });
-  
 
   JournalRouter.get('/api/getalljournal',authenticateToken,async (req, res) => {
     try{
@@ -105,8 +70,8 @@ JournalRouter.post('/api/addjournal',async (req, res) => {
 
             try{
                 if (!error) {
-                let{title,content,date ,email} = req.body;
-                const journal = await JournalModel.create({title,content,date,email});
+                let{title,content,date ,email,imageUrl} = req.body;
+                const journal = await JournalModel.create({title,content,date,email,imageUrl});
                 res.status(201).json(journal);}
                 else {
                     return res.status(400).send({

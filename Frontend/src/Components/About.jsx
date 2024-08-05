@@ -11,7 +11,7 @@ function About() {
         <img className='feather' src={feather} alt="feather" />
         <p className='about'>
                   <p><b>About Journal Jot</b> <br />
-                  Crafting Tomorrow's Memories . Today Welcome to Journal Jot, where we believe that every thought, every moment, and every memory deserves to be cherished. Founded with a passion for preserving life's fleeting moments in a secure and meaningful manner, Journal Jot is more than just a digital journaling platform—it's a testament to the power of self-expression and introspection.
+                  Crafting Tomorrow's Memories . Welcome to Journal Jot, where we believe that every thought, every moment, and every memory deserves to be cherished. Founded with a passion for preserving life's fleeting moments in a secure and meaningful manner, Journal Jot is more than just a digital journaling platform—it's a testament to the power of self-expression and introspection.
                   </p><br /><br />
                   <p>
                   <b>Our Mission</b><br />
@@ -19,7 +19,7 @@ function About() {
                   </p><br /><br />
                   <p>
                   <b>Innovation and Excellence</b><br />
-                  From intuitive user interfaces to cutting-edge features. We listen to your feedback. Thank you for choosing Journal Jot as your trusted companion on life's extraordinary journey. Here's to crafting tomorrow's memories today.
+                  From intuitive user interfaces to cutting-edge features. Thank you for choosing Journal Jot as your trusted companion on life's extraordinary journey. Here's to crafting tomorrow's memories today.
                   </p>
         </p>
     </div>

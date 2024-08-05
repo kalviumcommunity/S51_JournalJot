@@ -1,40 +1,60 @@
-import ReactQuill from "react-quill";
-import EditorToolbar, { formats } from "./EditorToolBox";
+import React, { Component } from 'react';
+import ReactQuill, { Quill } from 'react-quill';
+import quillEmoji from 'quill-emoji';
+import 'react-quill/dist/quill.snow.css';
+import 'quill-emoji/dist/quill-emoji.css'; // Ensure you have this line to import emoji styles
 
-export default function Editor({value, onChange}) {
- const modules = {
-    toolbar: [
-['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-  ['blockquote', 'code-block'],
-  ['link', 'formula'],
+const { EmojiBlot, ShortNameEmoji, ToolbarEmoji, TextAreaEmoji } = quillEmoji;
 
-  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-  [{ 'direction': 'rtl' }],                         // text direction
+Quill.register({
+  'formats/emoji': EmojiBlot,
+  'modules/emoji-shortname': ShortNameEmoji,
+  'modules/emoji-toolbar': ToolbarEmoji,
+  'modules/emoji-textarea': TextAreaEmoji,
+}, true);
 
-  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-  [{ 'font': [] }],
-  [{ 'align': [] }],
-
-  ['clean']
-    ],
+class MyComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "",
+    };
   }
 
-  return (
-    <div className="content">
-        {/* <EditorToolbar/> */}
-    <ReactQuill
-      value={value}
-      theme={'snow'}
-      onChange={(e) =>{onChange(e)}}
-      placeholder={"Begin your journey..."}
-      modules={modules}
-      formats={formats} />
-    </div>
-  );
+  modules = {
+    toolbar: [
+      [{ 'font': [] }, { 'header': [] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+      [{ 'align': [] }],
+      ['emoji'],
+      ['link'],
+      ['clean']
+    ],
+    'emoji-toolbar': true,
+    'emoji-textarea': true,
+    'emoji-shortname': true,
+  }
+
+  formats = [
+    'font', 'header', 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
+    'color', 'background', 'list', 'indent', 'align', 'link', 'image', 'clean', 'emoji'
+  ]
+
+  render() {
+    return (
+      <div className="text-editor">
+        <ReactQuill
+          theme="snow"
+          value={this.state.text}
+          onChange={(value) => this.setState({ text: value })}
+          modules={this.modules}
+          formats={this.formats}
+        />
+      </div>
+    );
+  }
 }
+
+export default MyComponent;

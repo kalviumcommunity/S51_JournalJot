@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import './Privacy.css'
-import pen from '../assets/pen.jpg'
+import pen from '../assets/pen.png'
 
 function Privacy() {
   return (
