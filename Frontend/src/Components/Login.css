@@ -2,17 +2,19 @@
   display: flex;
 }
 .login-left{
-  border: 1px solid rgb(2, 2, 70);
+  /* border: 1px solid rgb(2, 2, 70); */
   margin-top: 2vh;
   border-radius: 2vh;
   height: 96vh;
   width: 45vw;
-  margin-left: 2vh;
-  background-color: rgb(2, 2, 70);
+  margin-right: 2vh;
+  /* background-color: rgb(2, 2, 70); */
 }
 .boy1{
-  height: 70vh;
-  margin-left: 8vw;
+  height: 96vh;
+  width: 40vw;
+  border-radius: 5vh;
+  margin-left: 2vw;
 }
 .boy-text{
   color: white;
@@ -28,14 +30,18 @@
   text-align: center;
 }
 .sign-in{
-  font-size: 4vh;
+  font-size: 5vh;
   margin-bottom: 4vh;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .hyper2{
+  font-weight: 600;
   color: blue;
 }
 .acc{
-  font-weight: 500;
+  font-weight:500;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 .login-email{
   border: 1px solid ;
@@ -43,6 +49,7 @@
   height: 6vh;
   width: 25vw;
   margin-top: 5vh;
+  padding: 5px;
 }
 .login-password{
   border: 1px solid ;
@@ -50,6 +57,7 @@
   height: 6vh;
   width: 25vw;
   margin-top: 5vh;
+  padding: 5px;
 }
 .forgot{
   margin-left: 15vw;

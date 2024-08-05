@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../Components/Signup.css'
 import boy from "../assets/boy.png";
 import butter from "../assets/app-icon.png"
+import signupback from '../assets/signupback.png'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
@@ -67,8 +68,8 @@ function Signup() {
           </form>
         </div>
         <div className='signup-right'>
-          <img className='boy2' src={boy} alt="boy" />
-          <p className='text-boy'><b>Sign Up to login</b></p>
+          <img className='boy2' src={signupback} alt="signupback" />
+          {/* <p className='text-boy'><b>Sign Up to login</b></p> */}
         </div>
       </div>
 

@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import './Entry.css';
-import { Calendar } from 'primereact/calendar';
-import Editor from './Editor';
-import 'react-quill/dist/quill.snow.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import app from '../Firebase.js';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from '@firebase/storage';
+import ReactQuill, { Quill } from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import quillEmoji from 'quill-emoji';
+import DatePicker from 'react-date-picker';
+import 'react-date-picker/dist/DatePicker.css';
+import 'quill-emoji/dist/quill-emoji.css'; // Ensure you have this line to import emoji styles
+
+const { EmojiBlot, ShortNameEmoji, ToolbarEmoji, TextAreaEmoji } = quillEmoji;
+
+Quill.register({
+  'formats/emoji': EmojiBlot,
+  'modules/emoji-shortname': ShortNameEmoji,
+  'modules/emoji-toolbar': ToolbarEmoji,
+  'modules/emoji-textarea': TextAreaEmoji,
+}, true);
 
 function Entry() {
-  const [date, setDate] = useState(null);
-  const [editorState, setEditorState] = useState(null);
+  const [date, setDate] = useState(new Date());
   const [titleValue, setTitleValue] = useState('');
   const [content, setContent] = useState('');
   const storage = getStorage(app);
@@ -21,13 +32,26 @@ function Entry() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const loadEditor = async () => {
-      const { EditorState } = await import('draft-js');
-      setEditorState(EditorState.createEmpty());
-    };
-    loadEditor();
-  }, []);
+  const modules = {
+    toolbar: [
+      [{ 'font': [] }, { 'header': [] }],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+      [{ 'align': [] }],
+      ['emoji'],
+      ['link'],
+      ['clean']
+    ],
+    'emoji-toolbar': true,
+    'emoji-textarea': true,
+    'emoji-shortname': true,
+  }
+
+  const formats = [
+    'font', 'header', 'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
+    'color', 'background', 'list', 'indent', 'align', 'link', 'image', 'clean', 'emoji'
+  ]
 
   function handleFileChange(e) {
     const selectedFile = e.target.files[0];
@@ -85,16 +109,12 @@ function Entry() {
     }
   }
 
-  const onEditorStateChange = (editorState) => {
-    setEditorState(editorState);
-  };
-
   const handleTitleChange = (event) => {
     setTitleValue(event.target.value);
   }
 
-  const handleQuill = (data) => {
-    setContent(data);
+  const handleQuill = (value) => {
+    setContent(value);
   }
 
   return (
@@ -105,15 +125,31 @@ function Entry() {
           <div className="calendar">
             <div className='Calen'>
               Date:
-              <Calendar className="calen" value={date} onChange={(e) => setDate(e.value)} dateFormat="dd/mm/yy" />
+              <DatePicker 
+                className="calen" 
+                onChange={setDate} 
+                value={date} 
+                calendarIcon 
+                clearIcon 
+              />
             </div>
-            <textarea className="title" value={titleValue} onChange={handleTitleChange} placeholder='Enter Title'></textarea>
+            <textarea 
+              className="title" 
+              value={titleValue} 
+              onChange={handleTitleChange} 
+              placeholder='Enter Title'
+            ></textarea>
             <input type="file" onChange={handleFileChange} />
             {isLoading && <p>File upload <b>{progress}%</b></p>}
             <button className='save' type='submit' disabled={isLoading}>Save</button>
           </div>
           <div className='text-entry'>
-            <Editor value={content} onChange={handleQuill} />
+            <ReactQuill
+              value={content}
+              onChange={handleQuill}
+              modules={modules}
+              formats={formats}
+            />
           </div>
         </div>
       </form>

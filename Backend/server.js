@@ -15,7 +15,7 @@ app.use('/',signup)
 app.use(getRouter)
 app.use(postRouter)
 app.use(deleteRouter)
-app.use(putRouter)
+app.use("/",putRouter)
 app.use(JournalRouter)
 
 

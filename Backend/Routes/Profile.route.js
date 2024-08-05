@@ -13,7 +13,8 @@ const schema=Joi.object({
     Nickname:Joi.string().required(),
     Hobbies:Joi.string().required(),
     Description:Joi.string().required(),
-    email : Joi.string()
+    email : Joi.string().required(),
+    ProfilePic: Joi.string().required()
 })
 
 const authenticateToken = (req, res, next) => {
@@ -50,24 +51,18 @@ getRouter.get('/api/getprofile/:email',authenticateToken,async (req, res) => {
     }
 })
 
-postRouter.post('/api/addprofile',async (req, res) => {
-
-          
-            const { error, value } = schema.validate(req.body, { abortEarly: false });
-          
-
+postRouter.post('/api/addprofile/:email',async (req, res) => {
             try{
-                if (!error) {
-                let{Profilename,Nickname,Hobbies,Description,email} = req.body;
-                const profile = await profileModel.create({Profilename,Nickname,Hobbies,Description,email});
-                res.status(201).json(profile);}
-                else {
-                    console.error(error)
-                    return res.status(400).send({
-                        message: `Bad request, error:${error}`
-                    })
-                    
-                }
+                let{Profilename,Nickname,Hobbies,Description, ProfilePic} = req.body;
+                let email=req.params.email
+                const profile = await profileModel.create({Profilename,Nickname,Hobbies,Description,email, ProfilePic});
+                res.status(201).json(profile);
+                
+                    // console.error(error)
+                    // return res.status(400).send({
+                    //     message: `Bad request, error:${error}`
+                
+                
             } catch(err){
                 console.log(err);
                 return res.status(500).send({
@@ -78,21 +73,14 @@ postRouter.post('/api/addprofile',async (req, res) => {
         
 })
 
-putRouter.put('/api/updateprofile/:email',authenticateToken,async (req, res) => {
-    const { error, value } = schema.validate(req.body, { abortEarly: false });
-          
+putRouter.put('/api/updateprofile/:email',async (req, res) => {
+    console.log("working update")
     try {
-        if (!error) {
-        const {email} = req.params;
-        let{Profilename,Nickname,Hobbies,Description} = req.body;
-        const profile = await profileModel.findOneAndUpdate({email:email},{Profilename,Nickname,Hobbies,Description});
-        res.status(200).json(profile);}
-        else {
-            return res.status(400).send({
-                message: `Bad request, error:${error}`
-            })
-            console.error(error)
-        }
+        let{Profilename,Nickname,Hobbies,Description, email, ProfilePic} = req.body;
+        const profile = await profileModel.findOneAndUpdate({email:email},{Profilename,email,Nickname,Hobbies,Description,ProfilePic});
+        console.log(profile)
+        res.status(200).json(profile)
+        
     }catch(err){
         console.log(err);
         return res.status(500).send({

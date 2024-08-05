@@ -120,7 +120,7 @@ function Home() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <button className='see'>See more features</button>
             </div>
 
@@ -162,7 +162,7 @@ function Home() {
                 </div>
               </div>
               
-            </div>
+            </div> */}
 
             <div className='footer'>
               <div className='line1'>

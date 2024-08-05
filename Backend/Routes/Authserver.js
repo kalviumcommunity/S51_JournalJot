@@ -37,7 +37,7 @@ login.post('/login',async (req, res) => {
         const accessToken = jwt.sign({email:user.email,name:user.name,password:user.password},process.env.ACCESS_TOKEN_SECRET )
         res.json( {accessToken: accessToken})
     }else{
-        res.send('Wrong Password')
+        res.status(401).send('Wrong Password')
     }
    }catch(err){
     res.status(500).json(user);

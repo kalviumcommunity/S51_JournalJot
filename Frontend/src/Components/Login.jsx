@@ -3,11 +3,13 @@ import axios from 'axios';
 import './Login.css';
 import butter from "../assets/app-icon.png"
 import boy from "../assets/boy.png";
+import loginback from '../assets/loginback.png'
 import { Link ,useNavigate} from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -15,6 +17,10 @@ function Login() {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
   const navigate = useNavigate();
@@ -39,7 +45,9 @@ function Login() {
             console.log(response.data.accessToken)
           setCookie('token', response.data.accessToken,365);
           setCookie('email', email,365);
-      navigate('/home')}).catch((error)=>{console.error(error)});
+      navigate('/home')}).catch((error)=>{
+        alert(error.response.data)
+        console.error(error)});
 
       }
 
@@ -47,8 +55,8 @@ function Login() {
     <>
       <div className='login-page'>
           <div className='login-left'>
-            <img className='boy1' src={boy} alt="boy" />
-            <p className='boy-text'><b>Login to start your Journal</b></p>
+            <img className='boy1' src={loginback} alt="signupback" />
+            {/* <p className='boy-text'><b>Login to start your Journal</b></p> */}
           </div>
           <div className='login-right'>
             <img className='butter' src={butter} alt="" />
