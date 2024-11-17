@@ -10,8 +10,9 @@
 
 .policy{
     display: flex;
-    background-color: antiquewhite;
+    background-color: white;
     height: 100vh;
+    color: black;
 }
 
 .pen{

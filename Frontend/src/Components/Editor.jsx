@@ -33,8 +33,8 @@ class MyComponent extends Component {
       ['clean']
     ],
     'emoji-toolbar': true,
-    'emoji-textarea': true,
-    'emoji-shortname': true,
+    // 'emoji-textarea': true,
+    // 'emoji-shortname': true,
   }
 
   formats = [

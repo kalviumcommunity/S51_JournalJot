@@ -29,7 +29,7 @@ const authenticateToken = (req, res, next) => {
   JournalRouter.get('/api/getalljournal',authenticateToken,async (req, res) => {
     try{
         const journal = await JournalModel.find();
-        res.status(200).json(profile);
+        res.status(200).json(journal);
     } catch(err){
         console.log(err);
         return res.status(500).send({
@@ -116,7 +116,7 @@ JournalRouter.patch('/api/updatejournal/:id',authenticateToken,async (req, res) 
 JournalRouter.delete('/api/deletejournal/:id',authenticateToken,async (req, res) => {
     try {
         const {id} = req.params;
-        // const filter ={"Id":Number(id)}
+        const filter ={"_id":id}
         const journal = await JournalModel.findOneAndDelete({_id:id});
         res.status(200).json(journal);
     }catch(err){
