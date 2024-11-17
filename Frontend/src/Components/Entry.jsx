@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
 import './Entry.css';
 import axios from "axios";
@@ -8,8 +8,6 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL } from '@firebase
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import quillEmoji from 'quill-emoji';
-import DatePicker from 'react-date-picker';
-import 'react-date-picker/dist/DatePicker.css';
 import 'quill-emoji/dist/quill-emoji.css'; // Ensure you have this line to import emoji styles
 
 const { EmojiBlot, ShortNameEmoji, ToolbarEmoji, TextAreaEmoji } = quillEmoji;
@@ -22,7 +20,7 @@ Quill.register({
 }, true);
 
 function Entry() {
-  const [date, setDate] = useState(new Date());
+  const [date] = useState(new Date()); // Initial date set to current date
   const [titleValue, setTitleValue] = useState('');
   const [content, setContent] = useState('');
   const storage = getStorage(app);
@@ -31,6 +29,13 @@ function Entry() {
   const [progress, setProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  // Format date to DD-MM-YY
+  const formattedDate = date.toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  });
 
   const modules = {
     toolbar: [
@@ -66,8 +71,7 @@ function Entry() {
         (snapshot) => {
           const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
           setProgress(progress);
-        },
-        (error) => {
+        },(error) => {
           console.error(error);
           setIsLoading(false);
         },
@@ -89,13 +93,13 @@ function Entry() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (url) {
+    console.log("Save button clicked");
       axios.post('http://localhost:3000/api/addjournal', {
         title: titleValue,
         content: content,
         date: date,
         email: getCookie('email'),
-        imageUrl: url
+        imageUrl: url || null
       }, {
         headers: { authorization: `Bearer ${getCookie("token")}` }
       })
@@ -104,9 +108,6 @@ function Entry() {
           navigate('/home');
         })
         .catch((error) => console.error(error));
-    } else {
-      console.error('Image URL is not set');
-    }
   }
 
   const handleTitleChange = (event) => {
@@ -124,14 +125,7 @@ function Entry() {
         <div className="content">
           <div className="calendar">
             <div className='Calen'>
-              Date:
-              <DatePicker 
-                className="calen" 
-                onChange={setDate} 
-                value={date} 
-                calendarIcon 
-                clearIcon 
-              />
+              Date: <span>{formattedDate}</span> 
             </div>
             <textarea 
               className="title" 

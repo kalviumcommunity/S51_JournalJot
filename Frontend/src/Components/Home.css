@@ -7,9 +7,9 @@
 .Navbar{
   display: flex;
   align-items: center;
-  /* border: 1px solid black; */
+  color: black;
+  font-weight:600;
   justify-content: space-between;
-  /* margin: 20px; */
 }
 
 .left-nav{
@@ -64,6 +64,11 @@
 }
 .h5{
   margin-top: 4vh;
+  color: black;
+}
+
+.craft{
+  color: black;
 }
 
 .span1{
@@ -142,12 +147,13 @@
 }
 .all2{
   margin-top: 4vh;
+  color: black;
 }
 .land2{
   display: block;
   justify-content: center;
   text-align: center;
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
 }
 
 .second-land{
@@ -170,6 +176,7 @@
   justify-content: space-around;
   text-align: center;
   align-items: center;
+  color: black;
 }
 
 .class{
@@ -184,6 +191,7 @@
 }
 .feature{
   margin-top: 3vh;
+  color: black;
 }
 .tools{
   display: flex;
@@ -194,6 +202,7 @@
 
 .icon{
   display: flex;
+  color: black;
   flex-direction: column;
   padding: 20px 20px;
   border-radius: 10px;
@@ -205,6 +214,7 @@
   margin-top: 20vh;
   justify-content: space-around;
   align-items: center;
+  color: black;
 }
 .para1{
   margin-bottom: 5vh;
@@ -212,7 +222,11 @@
 
 .para2{
   margin-top: 5vh;
+  color: black;
+}
 
+.part-2{
+  background-color: white;
 }
 
 .see{

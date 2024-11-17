@@ -14,9 +14,6 @@ import icon9 from '../assets/icon9.png'
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
-// import insta from '../assets/insta (3).png'
-// import linkedin from '../assets/linked-in (3).png'
-// import github from '../assets/github (2).png'
 import axios from "axios"
 import everything from '../assets/everything.png'
 import { Link } from 'react-router-dom';
@@ -54,8 +51,9 @@ function Home() {
                   <img className='girl' src={header} alt="girl" />
                 </div>
               </div>
-            </div>
+            
 
+            <div className='part-2'>
             <div className='land2'>
               <b><h2 className='all'><span className='span3'>All-In-One</span> <span className='span4'>Cloud Software.</span></h2></b>
               <h4 className='all2'>Journal Jot is one powerful online software suite that combines all the <br /> tools needed to start your journal journey</h4>
@@ -83,12 +81,12 @@ function Home() {
 
             <div className='third-land'>
               <p><b><span className='span5'>What is</span> <span className='span6'>Journal Jot?</span></b></p>
-              <p>Crafting Tomorrow's Memories . Today Welcome to Journal Jot, where we believe that <br /> every thought, every moment, and every memory deserves to be cherished. Founded <br /> with a passion for preserving life's fleeting moments in a secure and meaningful <br /> manner. </p>
+              <p className='craft'>Crafting Tomorrow's Memories . Today Welcome to Journal Jot, where we believe that <br /> every thought, every moment, and every memory deserves to be cherished. Founded <br /> with a passion for preserving life's fleeting moments in a secure and meaningful <br /> manner. </p>
             </div>
             <div  className='everything'>
               <div>
                 <b><p><span className='span7'>Everything you can do in a physical <br /> notebook,</span><span className='span8'>you can do with JournalJot</span></p></b>
-                <p>Journal Jot is more than just a digital journaling platform <br /> it's a testament to the power of self-expression and <br /> introspection.</p>
+                <p className='digital'>Journal Jot is more than just a digital journaling platform <br /> it's a testament to the power of self-expression and <br /> introspection.</p>
               </div>
               <div>
                 <img className='class'  src={everything} alt="everything" />
@@ -113,56 +111,14 @@ function Home() {
             <div className='fun'>
               <div className='fun1'>
                 <p className='para1'><b><span className='span13'>Making Journaling</span> <span className='span14'>Fun</span></b></p>
-                <p>We understand the significance of personal narratives <br /> in shaping our understanding of the world and <br /> ourselves.</p>
+                <p className='signi'>We understand the significance of personal narratives <br /> in shaping our understanding of the world and <br /> ourselves.</p>
               </div>
               <div>
                 <img className='icon5' src={icon5} alt="" />
               </div>
             </div>
-
-            {/* <div>
-              <button className='see'>See more features</button>
-            </div>
-
-            <div className='integration'>
-              <div className='four'>
-                <div>
-                  <div>
-                    <img src={icon6} alt="icon6" />
-                  </div>
-                  <div>
-                  <img src={icon8} alt="icon8" />
-                    
-                  </div>
-                </div>
-                <div className='four2'>
-                  <div>
-                  <img src={icon7} alt="icon7" />
-                  </div>
-                  <div>
-                    <img src={icon9} alt="icon9" />
-                  </div>
-                </div>
-                
-              </div>
-              
-              <div>
-                <div className='line-flex'>
-                  <div className='line'></div>
-                  <p className='inte'>INTEGRATIONS</p>
-                </div>
-                <div className='platform'>
-                    <p><b><span className='span15'>50+ journaling tools and <br /> platform</span> <span className='span16'>integrations</span></b></p>
-                </div>
-                <div className='platform1'>
-                  <p>Journal Jot has every tool your journal needs and comes pre- <br />integrated with more than 50+ tools, journal information <br /> systems (JIS), and journal platforms.</p>
-                </div>
-                <div>
-                <button className='all-integration'>See all integrations</button>
-                </div>
-              </div>
-              
-            </div> */}
+            
+            
 
             <div className='footer'>
               <div className='line1'>
@@ -178,8 +134,8 @@ function Home() {
               </div>
               
               <div className='line3'>
-                <a className='linkedin'  href="https://www.linkedin.com/in/d-premapriya-998789289"> <FaGithub /></a>
-                <a className='github'  href="https://github.com/Premapriya1905"><FaLinkedin /></a>
+                <a className='linkedin'  href="https://www.linkedin.com/in/d-premapriya-998789289"> <FaLinkedin /></a>
+                <a className='github'  href="https://github.com/Premapriya1905"><FaGithub /></a>
                 <a className='insta'  href="https://www.instagram.com/reels/CzT7kxwRNBg/"><FaInstagramSquare /></a>
               </div>
 
@@ -194,6 +150,8 @@ function Home() {
                 <p>Contact - 949-735-4092</p>
               </div>
             </div>
+            </div>
+          </div>
 
     </>
   )
